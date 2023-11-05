@@ -13,7 +13,7 @@ config_version=5
 config/name="勇者斗邪恶"
 run/main_scene="res://程序/主场景/主场景.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://美术/godot_icon.svg"
+config/icon="res://资源/godot_icon.svg"
 
 [filesystem]
 
