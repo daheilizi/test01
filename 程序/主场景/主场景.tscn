@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://du06e3w11magv"]
+
+[ext_resource type="Script" path="res://程序/主场景/主场景.gd" id="1_hgbfu"]
+
+[node name="主场景" type="Node"]
+script = ExtResource("1_hgbfu")
