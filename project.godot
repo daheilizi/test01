@@ -15,6 +15,10 @@ run/main_scene="res://程序/主场景/主场景.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://资源/godot_icon.svg"
 
+[autoload]
+
+Global="*res://程序/自动加载/全局/global.gd"
+
 [display]
 
 window/size/viewport_width=1920

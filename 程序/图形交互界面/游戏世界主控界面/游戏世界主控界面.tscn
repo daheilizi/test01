@@ -72,7 +72,8 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 
-[node name="消息" type="TabContainer" parent="背景面板/水平分割/右侧竖直分割/右上"]
+[node name="消息面板" type="TabContainer" parent="背景面板/水平分割/右侧竖直分割/右上"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -81,14 +82,14 @@ grow_vertical = 0
 theme_override_constants/side_margin = 0
 clip_tabs = false
 
-[node name="全部" type="RichTextLabel" parent="背景面板/水平分割/右侧竖直分割/右上/消息"]
+[node name="全部" type="RichTextLabel" parent="背景面板/水平分割/右侧竖直分割/右上/消息面板"]
 layout_mode = 2
 
-[node name="系统" type="RichTextLabel" parent="背景面板/水平分割/右侧竖直分割/右上/消息"]
+[node name="系统" type="RichTextLabel" parent="背景面板/水平分割/右侧竖直分割/右上/消息面板"]
 visible = false
 layout_mode = 2
 
-[node name="回合" type="RichTextLabel" parent="背景面板/水平分割/右侧竖直分割/右上/消息"]
+[node name="战斗" type="RichTextLabel" parent="背景面板/水平分割/右侧竖直分割/右上/消息面板"]
 visible = false
 layout_mode = 2
 
