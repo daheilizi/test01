@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://k0kiy07qgtqe"]
+
+[ext_resource type="Script" path="res://程序/系统/战斗系统/战斗系统.gd" id="1_qjr3x"]
+
+[node name="战斗系统" type="Node"]
+script = ExtResource("1_qjr3x")

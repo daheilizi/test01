@@ -11,5 +11,6 @@ func _ready() -> void:
 
 
 func 触发_发送消息(para_消息类型: Global.消息类型, para_消息内容: String) -> void:
-	print(para_消息内容)
+	# 为’全部‘添加消息内容
+	消息面板.get_node("全部").add_text(para_消息内容)
 	pass

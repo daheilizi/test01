@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://du06e3w11magv"]
+[gd_scene load_steps=5 format=3 uid="uid://du06e3w11magv"]
 
 [ext_resource type="Script" path="res://程序/主场景/主场景.gd" id="1_hgbfu"]
 [ext_resource type="PackedScene" uid="uid://bxp6skwudr661" path="res://程序/系统/消息系统/消息系统.tscn" id="2_ed2rh"]
 [ext_resource type="PackedScene" uid="uid://c7auxnsx7suxr" path="res://程序/图形交互界面/游戏世界主控界面/游戏世界主控界面.tscn" id="3_2pip7"]
+[ext_resource type="PackedScene" uid="uid://k0kiy07qgtqe" path="res://程序/系统/战斗系统/战斗系统.tscn" id="3_ox5at"]
 
 [node name="主场景" type="Node"]
 script = ExtResource("1_hgbfu")
 
 [node name="消息系统" parent="." instance=ExtResource("2_ed2rh")]
+
+[node name="战斗系统" parent="." instance=ExtResource("3_ox5at")]
 
 [node name="游戏世界主控界面" parent="." instance=ExtResource("3_2pip7")]
