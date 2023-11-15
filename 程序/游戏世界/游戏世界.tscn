@@ -28,7 +28,7 @@ custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 
 [node name="1" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "1"
@@ -36,7 +36,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="2" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "2"
@@ -44,7 +44,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="3" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "3"
@@ -52,7 +52,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="4" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "4"
@@ -60,7 +60,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="5" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "5"
@@ -68,7 +68,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="6" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "6"
@@ -76,7 +76,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="7" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "7"
@@ -84,18 +84,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="8" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "8"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="9" type="Label" parent="坐标显示层/顶部/布局"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "9"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -122,7 +114,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="A" type="Label" parent="坐标显示层/左侧/布局"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "A"
@@ -130,7 +122,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="B" type="Label" parent="坐标显示层/左侧/布局"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "B"
@@ -138,7 +130,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="C" type="Label" parent="坐标显示层/左侧/布局"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "C"
@@ -146,18 +138,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="D" type="Label" parent="坐标显示层/左侧/布局"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "D"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="E" type="Label" parent="坐标显示层/左侧/布局"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -169,5 +153,5 @@ position = Vector2(60, 60)
 tile_set = ExtResource("2_6yo2m")
 cell_quadrant_size = 128
 format = 2
-layer_0/name = "网格"
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 65537, 0, 0, 131073, 0, 0, 131074, 0, 0, 196610, 0, 0, 196611, 0, 0, 262144, 0, 0, 196608, 0, 0, 131072, 0, 0, 1, 0, 0, 196609, 0, 0, 262145, 0, 0, 262146, 0, 0, 65538, 0, 0, 2, 0, 0, 3, 0, 0, 65539, 0, 0, 65540, 0, 0, 4, 0, 0, 5, 0, 0, 65541, 0, 0, 65542, 0, 0, 6, 0, 0, 7, 0, 0, 65543, 0, 0, 65544, 0, 0, 8, 0, 0, 131080, 0, 0, 196616, 0, 0, 196615, 0, 0, 262152, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 131078, 0, 0, 131077, 0, 0, 131075, 0, 0, 131076, 0, 0, 131079, 0, 0)
+layer_0/name = "网格230"
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 196610, 1, 0, 131074, 1, 0, 65538, 1, 0, 2, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, 196611, 1, 0, 196612, 1, 0, 131076, 1, 0, 65540, 1, 0, 4, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 1, 0, 196614, 1, 0, 131078, 1, 0, 65542, 1, 0, 6, 1, 0)
