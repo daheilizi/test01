@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://brgpn8b7wkl76"]
+[gd_scene load_steps=3 format=3 uid="uid://brgpn8b7wkl76"]
 
 [ext_resource type="Script" path="res://程序/角色/角色.gd" id="1_5gt5d"]
+[ext_resource type="Texture2D" uid="uid://baj1tvb4nk5g2" path="res://资源/美术/角色/角色预设形象/影心.png" id="2_0ahkg"]
 
 [node name="角色" type="Node2D"]
 script = ExtResource("1_5gt5d")
@@ -8,10 +9,17 @@ script = ExtResource("1_5gt5d")
 [node name="卡片" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 180.0
-offset_bottom = 180.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
 
-[node name="Panel" type="Panel" parent="卡片"]
+[node name="角色形象精灵" type="Sprite2D" parent="卡片"]
+position = Vector2(100, 100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0ahkg")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="卡片"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

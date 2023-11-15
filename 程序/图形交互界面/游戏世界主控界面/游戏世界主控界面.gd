@@ -2,7 +2,6 @@ extends Control
 class_name 游戏世界主控界面
 
 
-@onready var 先攻顺序 = %先攻顺序
 @onready var 全部 = %全部
 
 func _ready() -> void:
