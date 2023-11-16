@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://11y36p4skxei"]
+[gd_scene load_steps=4 format=3 uid="uid://11y36p4skxei"]
 
 [ext_resource type="Script" path="res://程序/游戏世界/游戏世界.gd" id="1_y0ayi"]
 [ext_resource type="TileSet" uid="uid://bftmfnw1gga6v" path="res://资源/美术/地图/地图.tres" id="2_6yo2m"]
+[ext_resource type="PackedScene" uid="uid://brgpn8b7wkl76" path="res://程序/角色/角色.tscn" id="3_g0wmi"]
 
 [node name="游戏世界" type="Node2D"]
 script = ExtResource("1_y0ayi")
@@ -160,3 +161,6 @@ cell_quadrant_size = 128
 format = 2
 layer_0/name = "网格230"
 layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 196610, 1, 0, 131074, 1, 0, 65538, 1, 0, 2, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, 196611, 1, 0, 196612, 1, 0, 131076, 1, 0, 65540, 1, 0, 4, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 1, 0, 196614, 1, 0, 131078, 1, 0, 65542, 1, 0, 6, 1, 0)
+
+[node name="角色" parent="事物显示层" instance=ExtResource("3_g0wmi")]
+position = Vector2(174, 164)

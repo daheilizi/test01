@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brgpn8b7wkl76"]
+[gd_scene load_steps=4 format=3 uid="uid://brgpn8b7wkl76"]
 
 [ext_resource type="Script" path="res://程序/角色/角色.gd" id="1_5gt5d"]
-[ext_resource type="Texture2D" uid="uid://baj1tvb4nk5g2" path="res://资源/美术/角色/角色预设形象/影心.png" id="2_0ahkg"]
+[ext_resource type="Texture2D" uid="uid://bpqnaxr6e47f1" path="res://资源/美术/角色/角色预设形象/邪念.png" id="2_lyybh"]
+[ext_resource type="Texture2D" uid="uid://y6s6yuprtgfw" path="res://资源/美术/角色/角色卡片/角色卡牌边框.png" id="3_dt10a"]
 
 [node name="角色" type="Node2D"]
 script = ExtResource("1_5gt5d")
@@ -13,16 +14,81 @@ offset_left = -100.0
 offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
+metadata/_edit_use_anchors_ = true
 
-[node name="角色形象精灵" type="Sprite2D" parent="卡片"]
-position = Vector2(100, 100)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_0ahkg")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="卡片"]
+[node name="背景色" type="Panel" parent="卡片"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="角色形象精灵" type="Sprite2D" parent="卡片"]
+position = Vector2(100, 100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_lyybh")
+
+[node name="布局" type="Control" parent="卡片"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="编号" type="Label" parent="卡片/布局"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "NUM"
+clip_text = true
+
+[node name="角色名" type="Label" parent="卡片/布局"]
+layout_mode = 2
+offset_left = 40.0
+offset_right = 136.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 16
+text = "CharName"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="等级" type="Label" parent="卡片/布局"]
+layout_mode = 2
+offset_left = 136.0
+offset_right = 182.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 16
+text = "lv:999"
+clip_text = true
+
+[node name="决策" type="LineEdit" parent="卡片/布局"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 13
+placeholder_text = "决策"
+alignment = 1
+flat = true
+
+[node name="边框" type="NinePatchRect" parent="卡片"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dt10a")
+metadata/_edit_use_anchors_ = true
