@@ -58,7 +58,7 @@ stretch = true
 
 [node name="游戏世界子窗口" type="SubViewport" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(954, 534)
 render_target_update_mode = 4
 
 [node name="游戏世界" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器/游戏世界子窗口" instance=ExtResource("2_imtod")]

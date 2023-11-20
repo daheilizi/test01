@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://程序/角色/角色.gd" id="1_5gt5d"]
 [ext_resource type="Texture2D" uid="uid://bpqnaxr6e47f1" path="res://资源/美术/角色/角色预设形象/邪念.png" id="2_lyybh"]
-[ext_resource type="Texture2D" uid="uid://dmxlfr041iguu" path="res://资源/美术/角色/角色卡片/血量球.png" id="3_bngj4"]
 [ext_resource type="Texture2D" uid="uid://y6s6yuprtgfw" path="res://资源/美术/角色/角色卡片/角色卡牌边框.png" id="3_dt10a"]
-[ext_resource type="Texture2D" uid="uid://drwxeq8b3o5ro" path="res://资源/美术/角色/角色卡片/能量球.png" id="4_hftqo"]
-[ext_resource type="Texture2D" uid="uid://pyrhx2kxuffr" path="res://资源/美术/角色/角色卡片/护甲值.png" id="5_0kotm"]
+[ext_resource type="Texture2D" uid="uid://cw7khjmkb80eh" path="res://资源/美术/角色/角色卡片/hp.png" id="3_ik58e"]
+[ext_resource type="Texture2D" uid="uid://gf3h71s78hda" path="res://资源/美术/角色/角色卡片/ep.png" id="4_h0lxt"]
+[ext_resource type="Texture2D" uid="uid://bxnau6wh0yufi" path="res://资源/美术/角色/角色卡片/ac.png" id="5_svuka"]
 
 [node name="角色" type="Node2D"]
 script = ExtResource("1_5gt5d")
@@ -76,71 +76,31 @@ clip_text = true
 layout_mode = 0
 offset_top = 26.0
 offset_right = 36.0
-offset_bottom = 128.0
+offset_bottom = 182.0
 
-[node name="血量球" type="TextureRect" parent="卡片/布局/左侧面板"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 66.0
-offset_bottom = 66.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_bngj4")
-
-[node name="值" type="Label" parent="卡片/布局/左侧面板/血量球"]
+[node name="物品栏" type="VBoxContainer" parent="卡片/布局/左侧面板"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "999"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="能量球" type="TextureRect" parent="卡片/布局/左侧面板"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 36.0
-offset_right = 66.0
-offset_bottom = 100.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_hftqo")
+[node name="物品1" type="TextureRect" parent="卡片/布局/左侧面板/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
 
-[node name="值" type="Label" parent="卡片/布局/左侧面板/能量球"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "999"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="物品2" type="TextureRect" parent="卡片/布局/左侧面板/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
 
-[node name="护甲" type="TextureRect" parent="卡片/布局/左侧面板"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 70.0
-offset_right = 66.0
-offset_bottom = 134.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_0kotm")
+[node name="物品3" type="TextureRect" parent="卡片/布局/左侧面板/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
 
-[node name="值" type="Label" parent="卡片/布局/左侧面板/护甲"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "999"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="物品4" type="TextureRect" parent="卡片/布局/左侧面板/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
 
 [node name="右侧面板" type="Panel" parent="卡片/布局"]
 layout_mode = 0
@@ -183,50 +143,73 @@ layout_mode = 0
 offset_left = 36.0
 offset_top = 26.0
 offset_right = 146.0
-offset_bottom = 128.0
+offset_bottom = 122.0
 theme_override_font_sizes/normal_font_size = 18
 text = "状态"
 scroll_active = false
 
-[node name="物品栏" type="HBoxContainer" parent="卡片/布局"]
+[node name="血量能量护甲进度" type="VBoxContainer" parent="卡片/布局"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 128.0
-offset_right = 146.0
-offset_bottom = 160.0
+offset_left = 36.0
+offset_top = 122.0
+offset_right = 145.0
+offset_bottom = 182.0
+theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="卡片/布局/物品栏"]
-custom_minimum_size = Vector2(32, 32)
+[node name="血条" type="TextureProgressBar" parent="卡片/布局/血量能量护甲进度"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+value = 50.0
+texture_progress = ExtResource("3_ik58e")
 
-[node name="TextureRect2" type="TextureRect" parent="卡片/布局/物品栏"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="卡片/布局/物品栏"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="卡片/布局/物品栏"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="决策" type="LineEdit" parent="卡片/布局"]
+[node name="数值" type="Label" parent="卡片/布局/血量能量护甲进度/血条"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -22.0
-offset_right = -36.0
+offset_right = 1.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 10
-text = "上下左右a1 q2"
-placeholder_text = "决策"
-alignment = 1
-flat = true
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "50/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="能量" type="TextureProgressBar" parent="卡片/布局/血量能量护甲进度"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+value = 50.0
+texture_progress = ExtResource("4_h0lxt")
+
+[node name="数值" type="Label" parent="卡片/布局/血量能量护甲进度/能量"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "50/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="护甲" type="TextureProgressBar" parent="卡片/布局/血量能量护甲进度"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+value = 50.0
+texture_progress = ExtResource("5_svuka")
+
+[node name="数值" type="Label" parent="卡片/布局/血量能量护甲进度/护甲"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "50/100"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="边框" type="NinePatchRect" parent="卡片"]
 layout_mode = 1
@@ -237,3 +220,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_dt10a")
 metadata/_edit_use_anchors_ = true
+
+[node name="决策" type="LineEdit" parent="卡片"]
+layout_mode = 2
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "上下左右a1 q2"
+placeholder_text = "决策"
+alignment = 1
+flat = true

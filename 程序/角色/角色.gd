@@ -8,3 +8,5 @@ var char_名字: String
 var 血量: int
 var 能量: int
 var 护甲: int
+
+# 行为
