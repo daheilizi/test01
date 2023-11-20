@@ -76,7 +76,7 @@ clip_text = true
 layout_mode = 0
 offset_top = 26.0
 offset_right = 36.0
-offset_bottom = 182.0
+offset_bottom = 128.0
 
 [node name="血量球" type="TextureRect" parent="卡片/布局/左侧面板"]
 layout_mode = 0
@@ -95,7 +95,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "99"
+text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -116,7 +116,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "99"
+text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -124,8 +124,8 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 2.0
 offset_top = 70.0
-offset_right = 2.0
-offset_bottom = 70.0
+offset_right = 66.0
+offset_bottom = 134.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_0kotm")
 
@@ -138,7 +138,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "99"
+text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -149,18 +149,81 @@ offset_top = 26.0
 offset_right = 182.0
 offset_bottom = 182.0
 
+[node name="VBoxContainer" type="VBoxContainer" parent="卡片/布局/右侧面板"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="A" type="Button" parent="卡片/布局/右侧面板/VBoxContainer"]
+layout_mode = 2
+text = "A:0"
+
+[node name="Q" type="Button" parent="卡片/布局/右侧面板/VBoxContainer"]
+layout_mode = 2
+text = "Q:0"
+
+[node name="W" type="Button" parent="卡片/布局/右侧面板/VBoxContainer"]
+layout_mode = 2
+text = "W:0"
+
+[node name="E" type="Button" parent="卡片/布局/右侧面板/VBoxContainer"]
+layout_mode = 2
+text = "E:0"
+
+[node name="R" type="Button" parent="卡片/布局/右侧面板/VBoxContainer"]
+layout_mode = 2
+text = "R:0"
+
+[node name="状态显示" type="RichTextLabel" parent="卡片/布局"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 26.0
+offset_right = 146.0
+offset_bottom = 128.0
+theme_override_font_sizes/normal_font_size = 18
+text = "状态"
+scroll_active = false
+
+[node name="物品栏" type="HBoxContainer" parent="卡片/布局"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 128.0
+offset_right = 146.0
+offset_bottom = 160.0
+
+[node name="TextureRect" type="TextureRect" parent="卡片/布局/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="卡片/布局/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="卡片/布局/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="卡片/布局/物品栏"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
 [node name="决策" type="LineEdit" parent="卡片/布局"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 36.0
-offset_top = -26.0
+offset_left = 2.0
+offset_top = -22.0
 offset_right = -36.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 10
+text = "上下左右a1 q2"
 placeholder_text = "决策"
 alignment = 1
 flat = true
