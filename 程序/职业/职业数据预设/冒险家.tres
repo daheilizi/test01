@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="职业数据" load_steps=2 format=3 uid="uid://camxtyvetcxv4"]
+
+[ext_resource type="Script" path="res://程序/职业/职业数据.gd" id="1_fmnpm"]
+
+[resource]
+script = ExtResource("1_fmnpm")
+"_职业名字" = 0

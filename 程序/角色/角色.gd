@@ -8,8 +8,8 @@ class_name 角色
 @onready var ui_能量_数值 = %能量数值
 @onready var ui_护甲 = %护甲
 @onready var ui_护甲_数值 = %护甲数值
-
-@export var 库存: 库存数据
+@onready var ui_背包: Control = $"卡片/布局/左侧面板/背包"
+@onready var ui_技能栏: Control = $"卡片/布局/右侧面板/技能栏"
 
 var char_编号: String
 var char_名字: String
@@ -59,22 +59,9 @@ func _set_护甲_max(new_护甲_max: int) -> void:
 
 var 先攻: int
 
+# 职业
+@export var _职业集: 职业集
 # 行为
-var 行为: Dictionary = {
-	"上" : {
-		"耐力消耗" : 1
-		},
-	"下" : {
-		"耐力消耗" : 1
-		},
-	"左" : {
-		"耐力消耗" : 1
-		},
-	"右" : {
-		"耐力消耗" : 1
-		},
-	"普攻" : {
-		"耐力消耗" : 1
-		},
-}
-# 物品
+@export var _行为集: 行为集
+# 库存
+@export var _库存数据: 库存数据

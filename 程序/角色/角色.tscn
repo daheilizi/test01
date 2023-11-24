@@ -1,14 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://brgpn8b7wkl76"]
+[gd_scene load_steps=10 format=3 uid="uid://brgpn8b7wkl76"]
 
 [ext_resource type="Script" path="res://程序/角色/角色.gd" id="1_5gt5d"]
+[ext_resource type="Resource" uid="uid://cbt537qbeewcc" path="res://程序/行为/行为集预设/行为集预设_基本.tres" id="2_cxb8m"]
+[ext_resource type="Resource" uid="uid://djk853ic0n2in" path="res://程序/职业/职业集预设/职业集预设_基本.tres" id="2_ewsxw"]
 [ext_resource type="Texture2D" uid="uid://bpqnaxr6e47f1" path="res://资源/美术/角色/角色预设形象/邪念.png" id="2_lyybh"]
 [ext_resource type="Texture2D" uid="uid://y6s6yuprtgfw" path="res://资源/美术/角色/角色卡片/角色卡牌边框.png" id="3_dt10a"]
 [ext_resource type="Texture2D" uid="uid://ch16yixmil3wx" path="res://资源/美术/角色/角色卡片/ui_hp_color.png" id="3_um0lr"]
 [ext_resource type="Texture2D" uid="uid://chh87g2lt4xns" path="res://资源/美术/角色/角色卡片/ui_ep_color.png" id="4_lhvyv"]
+[ext_resource type="Resource" uid="uid://0pp1uddh5crw" path="res://程序/库存/库存数据预设/库存数据预设_基本.tres" id="4_psf35"]
 [ext_resource type="Texture2D" uid="uid://cggsj7v0xom34" path="res://资源/美术/角色/角色卡片/ui_ac_color.png" id="5_pmf3r"]
 
 [node name="角色" type="Node2D"]
 script = ExtResource("1_5gt5d")
+"_职业集" = ExtResource("2_ewsxw")
+"_行为集" = ExtResource("2_cxb8m")
+"_库存数据" = ExtResource("4_psf35")
 
 [node name="卡片" type="Control" parent="."]
 layout_mode = 3
@@ -80,7 +86,15 @@ offset_top = 27.0
 offset_right = 36.0
 offset_bottom = 182.0
 
-[node name="布局" type="MarginContainer" parent="卡片/布局/左侧面板"]
+[node name="背包" type="Control" parent="卡片/布局/左侧面板"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="布局" type="MarginContainer" parent="卡片/布局/左侧面板/背包"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,16 +106,16 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="背包" type="VBoxContainer" parent="卡片/布局/左侧面板/布局"]
+[node name="布局" type="VBoxContainer" parent="卡片/布局/左侧面板/背包/布局"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="物品栏1" type="TextureRect" parent="卡片/布局/左侧面板/布局/背包"]
+[node name="物品栏1" type="TextureRect" parent="卡片/布局/左侧面板/背包/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="1" type="Label" parent="卡片/布局/左侧面板/布局/背包/物品栏1"]
+[node name="数量" type="Label" parent="卡片/布局/左侧面板/背包/布局/布局/物品栏1"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -112,13 +126,13 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "1"
+horizontal_alignment = 2
 
-[node name="物品栏2" type="TextureRect" parent="卡片/布局/左侧面板/布局/背包"]
+[node name="物品栏2" type="TextureRect" parent="卡片/布局/左侧面板/背包/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="2" type="Label" parent="卡片/布局/左侧面板/布局/背包/物品栏2"]
+[node name="数量" type="Label" parent="卡片/布局/左侧面板/背包/布局/布局/物品栏2"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -129,14 +143,14 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "2"
+horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="物品栏3" type="TextureRect" parent="卡片/布局/左侧面板/布局/背包"]
+[node name="物品栏3" type="TextureRect" parent="卡片/布局/左侧面板/背包/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="3" type="Label" parent="卡片/布局/左侧面板/布局/背包/物品栏3"]
+[node name="数量" type="Label" parent="卡片/布局/左侧面板/背包/布局/布局/物品栏3"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -147,14 +161,14 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "3"
+horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="物品栏4" type="TextureRect" parent="卡片/布局/左侧面板/布局/背包"]
+[node name="物品栏4" type="TextureRect" parent="卡片/布局/左侧面板/背包/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="4" type="Label" parent="卡片/布局/左侧面板/布局/背包/物品栏4"]
+[node name="数量" type="Label" parent="卡片/布局/左侧面板/背包/布局/布局/物品栏4"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -165,7 +179,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "4"
+horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="右侧面板" type="Panel" parent="卡片/布局"]
@@ -175,7 +189,15 @@ offset_top = 26.0
 offset_right = 182.0
 offset_bottom = 182.0
 
-[node name="布局" type="MarginContainer" parent="卡片/布局/右侧面板"]
+[node name="技能栏" type="Control" parent="卡片/布局/右侧面板"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="布局" type="MarginContainer" parent="卡片/布局/右侧面板/技能栏"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -187,16 +209,16 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="技能栏" type="VBoxContainer" parent="卡片/布局/右侧面板/布局"]
+[node name="布局" type="VBoxContainer" parent="卡片/布局/右侧面板/技能栏/布局"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="技能q" type="TextureButton" parent="卡片/布局/右侧面板/布局/技能栏"]
+[node name="技能q" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="q" type="Label" parent="卡片/布局/右侧面板/布局/技能栏/技能q"]
+[node name="q" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能q"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -209,11 +231,11 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
 text = "q"
 
-[node name="技能w" type="TextureButton" parent="卡片/布局/右侧面板/布局/技能栏"]
+[node name="技能w" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="w" type="Label" parent="卡片/布局/右侧面板/布局/技能栏/技能w"]
+[node name="w" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能w"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -226,11 +248,11 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
 text = "w"
 
-[node name="技能e" type="TextureButton" parent="卡片/布局/右侧面板/布局/技能栏"]
+[node name="技能e" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="e" type="Label" parent="卡片/布局/右侧面板/布局/技能栏/技能e"]
+[node name="e" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能e"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -243,11 +265,11 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
 text = "e"
 
-[node name="技能r" type="TextureButton" parent="卡片/布局/右侧面板/布局/技能栏"]
+[node name="技能r" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="r" type="Label" parent="卡片/布局/右侧面板/布局/技能栏/技能r"]
+[node name="r" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能r"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

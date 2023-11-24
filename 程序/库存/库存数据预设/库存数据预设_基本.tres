@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="库存数据" load_steps=7 format=3 uid="uid://0pp1uddh5crw"]
+
+[ext_resource type="Script" path="res://程序/库存/栏位数据.gd" id="1_5diwy"]
+[ext_resource type="Script" path="res://程序/库存/库存数据.gd" id="1_xg6pp"]
+
+[sub_resource type="Resource" id="Resource_rbwk0"]
+script = ExtResource("1_5diwy")
+"_数量" = 0
+
+[sub_resource type="Resource" id="Resource_tglse"]
+script = ExtResource("1_5diwy")
+"_数量" = 0
+
+[sub_resource type="Resource" id="Resource_nlq7o"]
+script = ExtResource("1_5diwy")
+"_数量" = 0
+
+[sub_resource type="Resource" id="Resource_1t5to"]
+script = ExtResource("1_5diwy")
+"_数量" = 0
+
+[resource]
+script = ExtResource("1_xg6pp")
+"_栏位数据_arr" = Array[ExtResource("1_5diwy")]([SubResource("Resource_rbwk0"), SubResource("Resource_tglse"), SubResource("Resource_nlq7o"), SubResource("Resource_1t5to")])

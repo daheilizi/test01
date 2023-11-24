@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="职业集" load_steps=3 format=3 uid="uid://djk853ic0n2in"]
+
+[ext_resource type="Resource" uid="uid://camxtyvetcxv4" path="res://程序/职业/职业数据预设/冒险家.tres" id="1_7isbq"]
+[ext_resource type="Script" path="res://程序/职业/职业集.gd" id="1_ttuvl"]
+
+[resource]
+script = ExtResource("1_ttuvl")
+"_职业数据_arr" = Array[Resource("res://程序/职业/职业数据.gd")]([ExtResource("1_7isbq")])

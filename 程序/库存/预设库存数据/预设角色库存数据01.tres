@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="库存数据" load_steps=2 format=3 uid="uid://0pp1uddh5crw"]
-
-[ext_resource type="Script" path="res://程序/库存/库存数据.gd" id="1_xg6pp"]
-
-[resource]
-script = ExtResource("1_xg6pp")
-"arr_栏位" = Array[Resource("res://程序/库存/栏位数据.gd")]([null, null, null, null])
