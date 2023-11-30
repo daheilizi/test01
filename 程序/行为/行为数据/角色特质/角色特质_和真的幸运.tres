@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="行为数据" load_steps=2 format=3 uid="uid://cxx65ukn21r73"]
+
+[ext_resource type="Script" path="res://程序/行为/行为数据.gd" id="1_00iyf"]
+
+[resource]
+script = ExtResource("1_00iyf")
+"_行为名称" = 7
+"_行为类型" = 4
+"_耐力消耗" = 0
+"_冷却时间" = 0
+"_是否_禁用" = false
+"_行为_描述" = "角色特质_和真的幸运"

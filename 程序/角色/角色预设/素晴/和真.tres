@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="角色预设" load_steps=6 format=3 uid="uid://cawfk8yqxbr8s"]
+
+[ext_resource type="Texture2D" uid="uid://ex0hnwwolnpq" path="res://资源/美术/角色/角色预设形象/素晴/和真.png" id="1_wa43y"]
+[ext_resource type="Script" path="res://程序/角色/角色预设.gd" id="1_yx7wy"]
+[ext_resource type="Script" path="res://程序/职业/职业数据和等级.gd" id="2_44r3d"]
+[ext_resource type="Resource" uid="uid://nra8x5ekvw54" path="res://程序/职业/职业数据/冒险家.tres" id="2_did1r"]
+
+[sub_resource type="Resource" id="Resource_r37tq"]
+script = ExtResource("2_44r3d")
+"_职业数据" = ExtResource("2_did1r")
+"_职业等级" = 1
+
+[resource]
+script = ExtResource("1_yx7wy")
+"char_名字" = "和真"
+"char_等级" = 1
+"char_形象" = ExtResource("1_wa43y")
+"血量" = 5
+"血量_max" = 5
+"能量" = 5
+"能量_max" = 5
+"护甲" = 5
+"护甲_max" = 5
+"char_职业集" = Array[ExtResource("2_44r3d")]([SubResource("Resource_r37tq")])
+"char_行为集" = Array[Resource("res://程序/行为/行为数据.gd")]([])

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="物品数据" load_steps=3 format=3 uid="uid://l0rmwt7j1620"]
+
+[ext_resource type="Texture2D" uid="uid://bpvy1axwogopc" path="res://资源/美术/物品/道具/烤肉.png" id="1_rl7hq"]
+[ext_resource type="Script" path="res://资源/程序/库存/物品数据.gd" id="1_rm80m"]
+
+[resource]
+script = ExtResource("1_rm80m")
+"_物品名字" = 7
+"_物品类型" = 1
+"_物品纹理" = ExtResource("1_rl7hq")
+"_是否_堆叠" = true

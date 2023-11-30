@@ -1,0 +1,358 @@
+[gd_scene load_steps=12 format=3 uid="uid://brgpn8b7wkl76"]
+
+[ext_resource type="Script" path="res://程序/角色/角色.gd" id="1_uaxly"]
+[ext_resource type="Resource" uid="uid://bp5ba5uklpa4d" path="res://程序/行为/行为数据/基本行为/上.tres" id="2_54e78"]
+[ext_resource type="PackedScene" uid="uid://bgif1tuxi6shc" path="res://程序/库存/UI/栏位框/栏位框.tscn" id="2_kqiuo"]
+[ext_resource type="Texture2D" uid="uid://ch16yixmil3wx" path="res://资源/美术/角色/角色卡片/ui_hp_color.png" id="3_6rq1b"]
+[ext_resource type="Resource" uid="uid://cnup8ajiomcxs" path="res://程序/行为/行为数据/基本行为/下.tres" id="3_h3ygu"]
+[ext_resource type="Texture2D" uid="uid://chh87g2lt4xns" path="res://资源/美术/角色/角色卡片/ui_ep_color.png" id="4_knlfk"]
+[ext_resource type="Resource" uid="uid://owswgjhpbvj7" path="res://程序/行为/行为数据/基本行为/左.tres" id="4_lnfgp"]
+[ext_resource type="Texture2D" uid="uid://cggsj7v0xom34" path="res://资源/美术/角色/角色卡片/ui_ac_color.png" id="5_51hcv"]
+[ext_resource type="Resource" uid="uid://caxdhv8s28q84" path="res://程序/行为/行为数据/基本行为/右.tres" id="5_puqm4"]
+[ext_resource type="Resource" uid="uid://ckeyevof0k8t3" path="res://程序/行为/行为数据/基本行为/普攻.tres" id="6_t74ee"]
+[ext_resource type="Texture2D" uid="uid://y6s6yuprtgfw" path="res://资源/美术/角色/角色卡片/角色卡牌边框.png" id="6_uidsx"]
+
+[node name="角色" type="Node2D"]
+script = ExtResource("1_uaxly")
+"char_行为集" = Array[Resource("res://程序/行为/行为数据.gd")]([ExtResource("2_54e78"), ExtResource("3_h3ygu"), ExtResource("4_lnfgp"), ExtResource("5_puqm4"), ExtResource("6_t74ee")])
+
+[node name="卡片" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="背景色" type="Panel" parent="卡片"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="角色形象精灵" type="Sprite2D" parent="卡片"]
+position = Vector2(100, 100)
+scale = Vector2(0.5, 0.5)
+
+[node name="布局" type="Control" parent="卡片"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="顶部面板" type="Panel" parent="卡片/布局"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 182.0
+offset_bottom = 26.0
+
+[node name="编号" type="Label" parent="卡片/布局/顶部面板"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "NUM"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="角色名" type="Label" parent="卡片/布局/顶部面板"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 41.0
+offset_right = 142.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 16
+text = "CharName"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="等级" type="Label" parent="卡片/布局/顶部面板"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 142.0
+offset_right = 182.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 16
+text = "lv:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="左侧面板" type="Panel" parent="卡片/布局"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 36.0
+offset_bottom = 183.0
+
+[node name="背包" type="Control" parent="卡片/布局/左侧面板"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="布局" type="MarginContainer" parent="卡片/布局/左侧面板/背包"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="布局" type="VBoxContainer" parent="卡片/布局/左侧面板/背包/布局"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="栏位框" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
+layout_mode = 2
+"_栏位类型" = 0
+
+[node name="栏位框2" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
+layout_mode = 2
+
+[node name="栏位框3" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
+layout_mode = 2
+
+[node name="栏位框4" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
+layout_mode = 2
+
+[node name="右侧面板" type="Panel" parent="卡片/布局"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 27.0
+offset_right = 182.0
+offset_bottom = 183.0
+
+[node name="技能栏" type="Control" parent="卡片/布局/右侧面板"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="布局" type="MarginContainer" parent="卡片/布局/右侧面板/技能栏"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="布局" type="VBoxContainer" parent="卡片/布局/右侧面板/技能栏/布局"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="技能q" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="q" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能q"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "q"
+
+[node name="技能w" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="w" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能w"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "w"
+
+[node name="技能e" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="e" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能e"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "e"
+
+[node name="技能r" type="TextureButton" parent="卡片/布局/右侧面板/技能栏/布局/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="r" type="Label" parent="卡片/布局/右侧面板/技能栏/布局/布局/技能r"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "r"
+
+[node name="状态显示" type="RichTextLabel" parent="卡片/布局"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 27.0
+offset_right = 146.0
+offset_bottom = 127.0
+theme_override_font_sizes/normal_font_size = 18
+scroll_active = false
+
+[node name="血量能量护甲进度条" type="Panel" parent="卡片/布局"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 127.0
+offset_right = 146.0
+offset_bottom = 183.0
+
+[node name="布局" type="VBoxContainer" parent="卡片/布局/血量能量护甲进度条"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 108.0
+offset_bottom = 54.0
+theme_override_constants/separation = 2
+
+[node name="血量" type="TextureProgressBar" parent="卡片/布局/血量能量护甲进度条/布局"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+value = 1.0
+texture_progress = ExtResource("3_6rq1b")
+
+[node name="血量数值" type="Label" parent="卡片/布局/血量能量护甲进度条/布局/血量"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.5
+offset_top = -8.5
+offset_right = 19.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 16
+text = "0/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="能量" type="TextureProgressBar" parent="卡片/布局/血量能量护甲进度条/布局"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+texture_progress = ExtResource("4_knlfk")
+
+[node name="能量数值" type="Label" parent="卡片/布局/血量能量护甲进度条/布局/能量"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -10.0
+offset_right = 23.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 16
+text = "0/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="护甲" type="TextureProgressBar" parent="卡片/布局/血量能量护甲进度条/布局"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+texture_progress = ExtResource("5_51hcv")
+
+[node name="护甲数值" type="Label" parent="卡片/布局/血量能量护甲进度条/布局/护甲"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.5
+offset_top = -8.5
+offset_right = 19.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 16
+text = "0/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="边框" type="NinePatchRect" parent="卡片"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uidsx")
+
+[node name="决策" type="LineEdit" parent="卡片"]
+visible = false
+layout_mode = 2
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "决策"
+alignment = 1
+flat = true

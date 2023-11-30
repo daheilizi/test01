@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="物品数据" load_steps=3 format=3 uid="uid://23f2kqm2xv6a"]
+
+[ext_resource type="Script" path="res://程序/库存/物品数据.gd" id="1_luojc"]
+[ext_resource type="Texture2D" uid="uid://dbdpnymf1gw4f" path="res://资源/美术/物品/武器/长剑.png" id="1_qswlv"]
+
+[resource]
+script = ExtResource("1_luojc")
+"_物品名字" = 5
+"_物品类型" = 0
+"_物品纹理" = ExtResource("1_qswlv")
+"_是否_堆叠" = false

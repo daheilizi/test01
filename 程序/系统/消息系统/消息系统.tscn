@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxp6skwudr661"]
+
+[ext_resource type="Script" path="res://程序/系统/消息系统/消息系统.gd" id="1_kma73"]
+
+[node name="消息系统" type="Node"]
+script = ExtResource("1_kma73")

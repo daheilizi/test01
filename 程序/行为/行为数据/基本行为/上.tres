@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="行为数据" load_steps=2 format=3 uid="uid://bp5ba5uklpa4d"]
+
+[ext_resource type="Script" path="res://程序/行为/行为数据.gd" id="1_82rch"]
+
+[resource]
+script = ExtResource("1_82rch")
+"_行为名称" = "位移_上"
+"_行为类型" = 0
+"_耐力消耗" = 0
+"_冷却时间" = 0
+"_是否_禁用" = false
+"_行为_描述" = "基本行为 位移_上"

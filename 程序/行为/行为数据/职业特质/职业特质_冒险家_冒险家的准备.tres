@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="行为数据" load_steps=2 format=3 uid="uid://3u2m8mig587w"]
+
+[ext_resource type="Script" path="res://程序/行为/行为数据.gd" id="1_h2w1p"]
+
+[resource]
+script = ExtResource("1_h2w1p")
+"_行为名称" = 5
+"_行为类型" = 3
+"_耐力消耗" = 0
+"_冷却时间" = 0
+"_是否_禁用" = false
+"_行为_描述" = "冒险家已经准备好一场冒险了"

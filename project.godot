@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="勇者斗邪恶"
-run/main_scene="res://资源/程序/主场景/主场景.tscn"
+run/main_scene="res://程序/主场景/主场景.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://资源/godot_icon.svg"
 
 [autoload]
 
-Global="*res://资源/程序/自动加载/全局/global.gd"
+Global="*res://程序/自动加载/全局/global.gd"
 
 [display]
 
