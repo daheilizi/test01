@@ -9,6 +9,9 @@ var _角色_dict: Dictionary = {}
 func _ready() -> void:
 	Global._角色_dict = _角色_dict
 	add_角色(load("res://程序/角色/角色预设/素晴/和真.tres"))
+	add_角色(load("res://程序/角色/角色预设/素晴/惠惠.tres"))
+	add_角色(load("res://程序/角色/角色预设/素晴/达克尼斯.tres"))
+	add_角色(load("res://程序/角色/角色预设/素晴/阿库娅.tres"))
 	pass
 
 # 添加角色

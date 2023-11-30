@@ -8,12 +8,10 @@ enum 消息类型 {
 }
 
 # 消息系统 记名到全局
-@warning_ignore("unused_private_class_variable")
 var _消息系统: 消息系统
 # 战斗系统 记名到全局
-@warning_ignore("unused_private_class_variable")
 var _战斗系统: 战斗系统
-@warning_ignore("unused_private_class_variable")
+# 角色字典
 var _角色_dict: Dictionary = {}
 
 # 职业枚举
@@ -30,15 +28,16 @@ enum 职业名称 {
 
 # 角色行为名称
 enum 行为名称 {
+	# 基本位移
 	位移_上,
 	位移_下,
 	位移_左,
 	位移_右,
+	# 基本攻击
 	攻击_普攻,
 	# 职业特质 冒险家
 	职业特质_冒险家_冒险家的准备,
 	# 角色特质
-	角色特质_戈多,
 	角色特质_和真的幸运
 }
 
@@ -66,14 +65,14 @@ enum 物品名称 {
 	红血瓶,
 }
 
-# 栏位类型
-enum 栏位类型 {
-	通用,
-	武器,
-}
-
 # 物品类型
 enum 物品类型 {
 	武器,
 	道具,
+}
+
+# 栏位类型
+enum 栏位类型 {
+	通用,
+	武器,
 }
