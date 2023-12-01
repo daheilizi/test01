@@ -2,9 +2,10 @@ extends Node2D
 class_name 角色
 
 
-const 游戏世界坐标栏长宽_const = Vector2i(60,60)
+const 游戏世界坐标栏长宽_const = Vector2(60,60)
 const 游戏世界网格边长_const = 230
-const 游戏世界角色网格偏移_const = Vector2i(15,5)
+const 游戏世界角色网格偏移_const = Vector2(15,5)
+const 角色卡片尺寸_const = Vector2(200,200)
 
 @onready var ui_编号: Label = %"编号"
 @onready var ui_角色名: Label = %"角色名"
@@ -83,11 +84,11 @@ func _set_护甲_max(new_护甲_max: int) -> void:
 	ui_护甲_数值.text = str(护甲) + "/" + str(护甲_max)
 	pass
 
-var 游戏世界位置: Vector2i: set = _set_游戏世界位置
+var 游戏世界位置: Vector2: set = _set_游戏世界位置
 func _set_游戏世界位置(new_游戏世界位置: Vector2i) -> void:
 	游戏世界位置 = new_游戏世界位置
 	position = (游戏世界坐标栏长宽_const + 游戏世界角色网格偏移_const +  
-			游戏世界网格边长_const * (游戏世界位置 - Vector2i(1,1)))
+			游戏世界网格边长_const * (游戏世界位置 - Vector2(1,1)))
 	pass
 
 var 先攻: int
@@ -108,3 +109,57 @@ func 加载角色预设(new_角色预设: 角色预设) -> void:
 	_set_角色形象(new_角色预设.char_形象)
 	pass
 
+
+# 拖拽功能
+var 是否_鼠标进入: bool = false
+var 是否_被选中: bool = false
+var 选中时角色起始位置: Vector2
+var 选中时鼠标起始位置: Vector2
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("鼠标左键"):
+		if 是否_鼠标进入:
+			# 角色被选中
+			是否_被选中 = true
+			选中时角色起始位置 = position
+			选中时鼠标起始位置 = get_global_mouse_position()
+			pass
+	if event.is_action_released("鼠标左键"):
+		if 是否_鼠标进入:
+			# 角色被放置
+			是否_被选中 = false
+			_放置角色()
+		# 否则鼠标出框了，重置位置
+		else :
+			是否_被选中 = false
+			游戏世界位置 = 游戏世界位置
+			pass
+	if event is InputEventMouseMotion:
+		if 是否_被选中:
+			position = 选中时角色起始位置 + (get_global_mouse_position() - 选中时鼠标起始位置)
+		pass
+	pass
+
+func _放置角色() -> void:
+	# 计算角色游戏世界位置
+	var new_游戏世界位置: Vector2
+	var 卡片中心位置: Vector2 = 角色卡片尺寸_const / 2 + position
+	new_游戏世界位置 = ((卡片中心位置 - 游戏世界坐标栏长宽_const) / 游戏世界网格边长_const 
+			+ Vector2(1,1))
+	# 对计算的新位置取整
+	new_游戏世界位置.x = int(new_游戏世界位置.x)
+	new_游戏世界位置.y = int(new_游戏世界位置.y)
+	#print(new_游戏世界位置)
+	# 更新位置
+	游戏世界位置 = new_游戏世界位置
+	pass
+
+func _触发_卡片_mouse_entered() -> void:
+	是否_鼠标进入 = true
+	#print(是否_鼠标进入)
+	pass
+	
+func _触发_卡片_mouse_exited() -> void:
+	是否_鼠标进入 = false
+	#print(是否_鼠标进入)
+	pass

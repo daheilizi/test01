@@ -21,6 +21,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 200.0
 offset_bottom = 200.0
+mouse_filter = 1
 
 [node name="背景色" type="Panel" parent="卡片"]
 layout_mode = 1
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="角色形象精灵" type="Sprite2D" parent="卡片"]
@@ -46,12 +48,14 @@ offset_right = -9.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="顶部面板" type="Panel" parent="卡片/布局"]
 layout_mode = 0
 offset_top = -1.0
 offset_right = 182.0
 offset_bottom = 26.0
+mouse_filter = 1
 
 [node name="编号" type="Label" parent="卡片/布局/顶部面板"]
 unique_name_in_owner = true
@@ -59,6 +63,7 @@ layout_mode = 2
 offset_right = 40.0
 offset_bottom = 26.0
 grow_horizontal = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 16
 text = "NUM"
 horizontal_alignment = 1
@@ -70,6 +75,7 @@ layout_mode = 2
 offset_left = 41.0
 offset_right = 142.0
 offset_bottom = 26.0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 16
 text = "CharName"
 horizontal_alignment = 1
@@ -81,6 +87,7 @@ layout_mode = 2
 offset_left = 142.0
 offset_right = 182.0
 offset_bottom = 26.0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 16
 text = "lv:0"
 horizontal_alignment = 1
@@ -92,6 +99,7 @@ layout_mode = 0
 offset_top = 27.0
 offset_right = 36.0
 offset_bottom = 183.0
+mouse_filter = 1
 
 [node name="背包" type="Control" parent="卡片/布局/左侧面板"]
 layout_mode = 1
@@ -100,6 +108,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="布局" type="MarginContainer" parent="卡片/布局/左侧面板/背包"]
 layout_mode = 1
@@ -120,16 +129,20 @@ theme_override_constants/separation = 4
 
 [node name="栏位框" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
 layout_mode = 2
+mouse_filter = 1
 "_栏位类型" = 0
 
 [node name="栏位框2" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="栏位框3" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="栏位框4" parent="卡片/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="右侧面板" type="Panel" parent="卡片/布局"]
 layout_mode = 0
@@ -137,6 +150,7 @@ offset_left = 146.0
 offset_top = 27.0
 offset_right = 182.0
 offset_bottom = 183.0
+mouse_filter = 1
 
 [node name="技能栏" type="Control" parent="卡片/布局/右侧面板"]
 layout_mode = 1
@@ -237,6 +251,7 @@ offset_left = 36.0
 offset_top = 27.0
 offset_right = 146.0
 offset_bottom = 127.0
+mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 18
 scroll_active = false
 
@@ -246,6 +261,7 @@ offset_left = 36.0
 offset_top = 127.0
 offset_right = 146.0
 offset_bottom = 183.0
+mouse_filter = 1
 
 [node name="布局" type="VBoxContainer" parent="卡片/布局/血量能量护甲进度条"]
 layout_mode = 0
@@ -276,6 +292,7 @@ offset_right = 19.5
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 16
 text = "0/100"
@@ -302,6 +319,7 @@ offset_right = 23.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 16
 text = "0/100"
@@ -328,6 +346,7 @@ offset_right = 19.5
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 16
 text = "0/100"
@@ -342,6 +361,7 @@ anchor_bottom = 1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 texture = ExtResource("6_uidsx")
 
 [node name="决策" type="LineEdit" parent="卡片"]
@@ -352,7 +372,11 @@ offset_right = 200.0
 offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 10
 placeholder_text = "决策"
 alignment = 1
 flat = true
+
+[connection signal="mouse_entered" from="卡片" to="." method="_触发_卡片_mouse_entered"]
+[connection signal="mouse_exited" from="卡片" to="." method="_触发_卡片_mouse_exited"]
