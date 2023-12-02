@@ -96,6 +96,8 @@ var 先攻: int
 func _set_角色形象(new_char_形象: Texture2D) ->void:
 	角色形象精灵.texture = new_char_形象
 	pass
+	
+@export var 角色头像: Texture2D
 
 func 加载角色预设(new_角色预设: 角色预设) -> void:
 	char_名字 = new_角色预设.char_名字
@@ -106,6 +108,7 @@ func 加载角色预设(new_角色预设: 角色预设) -> void:
 	能量_max = new_角色预设.能量_max
 	护甲 = new_角色预设.护甲
 	护甲_max = new_角色预设.护甲_max
+	角色头像 = new_角色预设.char_头像
 	_set_角色形象(new_角色预设.char_形象)
 	pass
 

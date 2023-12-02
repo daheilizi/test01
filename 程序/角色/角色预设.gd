@@ -5,6 +5,7 @@ class_name 角色预设
 @export var char_名字: String
 @export var char_等级: int
 @export var char_形象: Texture2D
+@export var char_头像: Texture2D
 @export var 血量: int
 @export var 血量_max: int
 @export var 能量: int

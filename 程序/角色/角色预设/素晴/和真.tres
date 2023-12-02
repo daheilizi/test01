@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="角色预设" load_steps=6 format=3 uid="uid://cawfk8yqxbr8s"]
+[gd_resource type="Resource" script_class="角色预设" load_steps=7 format=3 uid="uid://cawfk8yqxbr8s"]
 
+[ext_resource type="Texture2D" uid="uid://f3ssqd307uf3" path="res://资源/美术/角色/角色预设形象/素晴/头像/和真_头像.png" id="1_fr0ra"]
 [ext_resource type="Texture2D" uid="uid://ex0hnwwolnpq" path="res://资源/美术/角色/角色预设形象/素晴/和真.png" id="1_wa43y"]
 [ext_resource type="Script" path="res://程序/角色/角色预设.gd" id="1_yx7wy"]
 [ext_resource type="Script" path="res://程序/职业/职业数据和等级.gd" id="2_44r3d"]
@@ -15,6 +16,7 @@ script = ExtResource("1_yx7wy")
 "char_名字" = "和真"
 "char_等级" = 1
 "char_形象" = ExtResource("1_wa43y")
+"char_头像" = ExtResource("1_fr0ra")
 "血量" = 5
 "血量_max" = 5
 "能量" = 5

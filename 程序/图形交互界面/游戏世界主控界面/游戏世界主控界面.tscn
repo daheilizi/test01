@@ -31,16 +31,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/autohide = 0
+split_offset = 488
 metadata/_edit_use_anchors_ = true
 
 [node name="布局左侧竖直分割" type="VSplitContainer" parent="背景面板/布局水平分割"]
 layout_mode = 2
 size_flags_horizontal = 3
+split_offset = -447
 
 [node name="左上" type="Panel" parent="背景面板/布局水平分割/布局左侧竖直分割"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
+
+[node name="先攻顺序面板" type="Control" parent="背景面板/布局水平分割/布局左侧竖直分割/左上"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="布局" type="HBoxContainer" parent="背景面板/布局水平分割/布局左侧竖直分割/左上/先攻顺序面板"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="布局" type="CenterContainer" parent="背景面板/布局水平分割/布局左侧竖直分割/左上/先攻顺序面板/布局"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="先攻标题" type="Label" parent="背景面板/布局水平分割/布局左侧竖直分割/左上/先攻顺序面板/布局/布局"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "先攻"
+
+[node name="角色头像显示框" type="HBoxContainer" parent="背景面板/布局水平分割/布局左侧竖直分割/左上/先攻顺序面板/布局"]
+layout_mode = 2
 
 [node name="左下" type="Panel" parent="背景面板/布局水平分割/布局左侧竖直分割"]
 layout_mode = 2
@@ -58,7 +88,7 @@ stretch = true
 
 [node name="游戏世界子窗口" type="SubViewport" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器"]
 handle_input_locally = false
-size = Vector2i(954, 534)
+size = Vector2i(1442, 981)
 render_target_update_mode = 4
 
 [node name="游戏世界" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器/游戏世界子窗口" instance=ExtResource("2_qvdju")]
@@ -122,3 +152,10 @@ layout_mode = 2
 [node name="添加测试角色" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局"]
 layout_mode = 2
 text = "添加测试角色"
+
+[node name="更新先攻顺序" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局"]
+layout_mode = 2
+text = "更新先攻顺序"
+
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局/添加测试角色" to="." method="触发_添加测试角色"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局/更新先攻顺序" to="." method="触发_更新先攻顺序"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://brgpn8b7wkl76"]
+[gd_scene load_steps=13 format=3 uid="uid://brgpn8b7wkl76"]
 
 [ext_resource type="Script" path="res://程序/角色/角色.gd" id="1_uaxly"]
 [ext_resource type="Resource" uid="uid://bp5ba5uklpa4d" path="res://程序/行为/行为数据/基本行为/上.tres" id="2_54e78"]
@@ -11,10 +11,12 @@
 [ext_resource type="Resource" uid="uid://caxdhv8s28q84" path="res://程序/行为/行为数据/基本行为/右.tres" id="5_puqm4"]
 [ext_resource type="Resource" uid="uid://ckeyevof0k8t3" path="res://程序/行为/行为数据/基本行为/普攻.tres" id="6_t74ee"]
 [ext_resource type="Texture2D" uid="uid://y6s6yuprtgfw" path="res://资源/美术/角色/角色卡片/角色卡牌边框.png" id="6_uidsx"]
+[ext_resource type="Texture2D" uid="uid://cprvxp28ckjny" path="res://资源/godot_icon.svg" id="7_sf05k"]
 
 [node name="角色" type="Node2D"]
 script = ExtResource("1_uaxly")
 "char_行为集" = Array[Resource("res://程序/行为/行为数据.gd")]([ExtResource("2_54e78"), ExtResource("3_h3ygu"), ExtResource("4_lnfgp"), ExtResource("5_puqm4"), ExtResource("6_t74ee")])
+"角色头像" = ExtResource("7_sf05k")
 
 [node name="卡片" type="Control" parent="."]
 layout_mode = 3
