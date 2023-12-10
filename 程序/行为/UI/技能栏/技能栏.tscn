@@ -1,0 +1,171 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjuvsdg80e2cd"]
+
+[ext_resource type="Script" path="res://程序/行为/UI/技能栏/技能栏.gd" id="1_fo71e"]
+
+[node name="技能栏" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fo71e")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 3
+
+[node name="布局" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="技能q" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="q" type="Label" parent="ScrollContainer/布局/技能q"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "q"
+
+[node name="技能w" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="w" type="Label" parent="ScrollContainer/布局/技能w"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "w"
+
+[node name="技能e" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="e" type="Label" parent="ScrollContainer/布局/技能e"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "e"
+
+[node name="技能r" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="r" type="Label" parent="ScrollContainer/布局/技能r"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "r"
+
+[node name="上" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="上" type="Label" parent="ScrollContainer/布局/上"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "上"
+
+[node name="下" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="下" type="Label" parent="ScrollContainer/布局/下"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "下"
+
+[node name="左" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="左" type="Label" parent="ScrollContainer/布局/左"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "左"
+
+[node name="右" type="TextureButton" parent="ScrollContainer/布局"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="右" type="Label" parent="ScrollContainer/布局/右"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "右"

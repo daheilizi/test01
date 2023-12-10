@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="角色预设" load_steps=2 format=3 uid="uid://bs7dksfbmmb2r"]
+
+[ext_resource type="Script" path="res://程序/角色/角色预设.gd" id="1_wlly5"]
+
+[resource]
+script = ExtResource("1_wlly5")
+"char_名字" = "低级史莱姆"
+"char_等级" = 1
+"血量" = 3
+"血量_max" = 3
+"能量" = 2
+"能量_max" = 2
+"护甲" = 0
+"护甲_max" = 0
+"char_职业集" = Array[Resource("res://程序/职业/职业数据和等级.gd")]([])
+"char_行为集" = Array[Resource("res://程序/行为/行为数据.gd")]([])

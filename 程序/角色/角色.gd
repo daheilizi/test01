@@ -16,9 +16,9 @@ const 角色卡片尺寸_const = Vector2(200,200)
 @onready var ui_能量_数值: Label = %能量数值
 @onready var ui_护甲: TextureProgressBar = %护甲
 @onready var ui_护甲_数值: Label = %护甲数值
-@onready var ui_背包: Control = $"卡片/布局/左侧面板/背包"
-@onready var ui_技能栏: Control = $"卡片/布局/右侧面板/技能栏"
-@onready var 角色形象精灵: Sprite2D = $"卡片/角色形象精灵"
+@onready var ui_背包: Control = %背包
+@onready var ui_技能栏: Control = %技能栏
+@onready var 角色形象精灵: Sprite2D = %角色形象精灵
 
 var char_编号: String: set = _set_char_编号
 func  _set_char_编号(new_char_编号) -> void:
@@ -166,3 +166,4 @@ func _触发_卡片_mouse_exited() -> void:
 	是否_鼠标进入 = false
 	#print(是否_鼠标进入)
 	pass
+

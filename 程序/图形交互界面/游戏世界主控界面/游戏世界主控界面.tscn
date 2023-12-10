@@ -135,27 +135,26 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_vertical = 0
 theme_override_constants/side_margin = 0
 clip_tabs = false
 
-[node name="控制面板" type="MarginContainer" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局"]
+[node name="测试面板" type="MarginContainer" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局"]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="布局" type="HFlowContainer" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板"]
+[node name="布局" type="HFlowContainer" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板"]
 layout_mode = 2
 
-[node name="添加测试角色" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局"]
+[node name="添加测试角色" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
 layout_mode = 2
 text = "添加测试角色"
 
-[node name="更新先攻顺序" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局"]
+[node name="更新先攻顺序" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
 layout_mode = 2
 text = "更新先攻顺序"
 
-[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局/添加测试角色" to="." method="触发_添加测试角色"]
-[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/控制面板/布局/更新先攻顺序" to="." method="触发_更新先攻顺序"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/添加测试角色" to="." method="触发_添加测试角色"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/更新先攻顺序" to="." method="触发_更新先攻顺序"]
