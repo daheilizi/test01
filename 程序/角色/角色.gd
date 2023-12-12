@@ -7,6 +7,8 @@ const 游戏世界网格边长_const = 230
 const 游戏世界角色网格偏移_const = Vector2(15,5)
 const 角色卡片尺寸_const = Vector2(200,200)
 
+#const 行为列表_SCENE = preload("res://程序/行为/UI/行为列表/行为列表.tscn")
+
 @onready var ui_编号: Label = %"编号"
 @onready var ui_角色名: Label = %"角色名"
 @onready var ui_等级: Label = %"等级"
@@ -17,8 +19,15 @@ const 角色卡片尺寸_const = Vector2(200,200)
 @onready var ui_护甲: TextureProgressBar = %护甲
 @onready var ui_护甲_数值: Label = %护甲数值
 @onready var ui_背包: Control = %背包
-@onready var ui_技能栏: Control = %技能栏
+@onready var ui_行为列表 = %"行为列表" as 行为列表
 @onready var 角色形象精灵: Sprite2D = %角色形象精灵
+
+func _ready() -> void:
+	# 连接信号 行为数据操控
+	信号_添加行为数据.connect(ui_行为列表.触发_添加行为数据)
+	信号_删除行为数据.connect(ui_行为列表.触发_删除行为数据)
+	信号_修改行为数据.connect(ui_行为列表.触发_修改行为数据)
+	pass
 
 var char_编号: String: set = _set_char_编号
 func  _set_char_编号(new_char_编号) -> void:
@@ -37,10 +46,6 @@ func  _set_char_等级(new_char_等级) -> void:
 	char_等级 = new_char_等级
 	ui_等级.text = "lv:" + str(char_等级)
 	pass
-
-@export var char_职业集: Array[职业数据和等级]
-@export var char_行为集: Array[行为数据]
-@export var char_背包: 库存数据
 
 var 血量: int: set = _set_血量
 func _set_血量(new_血量: int) -> void:
@@ -84,6 +89,30 @@ func _set_护甲_max(new_护甲_max: int) -> void:
 	ui_护甲_数值.text = str(护甲) + "/" + str(护甲_max)
 	pass
 
+var char_职业集: Array[职业数据和等级]
+
+var char_行为集: Array[行为数据]
+# 控制管理行为数据集
+# 行为数据操作信号
+signal 信号_添加行为数据()
+signal 信号_删除行为数据(para_行为集: Array[行为数据])
+signal 信号_修改行为数据(para_行为集: Array[行为数据])
+
+func 添加_行为数据(new_行为数据: 行为数据) -> void:
+	char_行为集.append(new_行为数据)
+	emit_signal("信号_添加行为数据", char_行为集)
+	pass
+
+func 删除_行为数据(行为名称: Global.行为名称) -> void:
+	
+	pass
+	
+func 修改_行为数据(目标_行为数据: 行为数据) -> void:
+	
+	pass
+
+var char_背包: 库存数据
+
 var 游戏世界位置: Vector2: set = _set_游戏世界位置
 func _set_游戏世界位置(new_游戏世界位置: Vector2i) -> void:
 	游戏世界位置 = new_游戏世界位置
@@ -111,7 +140,6 @@ func 加载角色预设(new_角色预设: 角色预设) -> void:
 	角色头像 = new_角色预设.char_头像
 	_set_角色形象(new_角色预设.char_形象)
 	pass
-
 
 # 拖拽功能
 var 是否_鼠标进入: bool = false

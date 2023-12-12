@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="角色预设" load_steps=4 format=3 uid="uid://bd5y5wu0x188q"]
 
+[ext_resource type="Script" path="res://程序/角色/角色预设/角色预设.gd" id="1_7npeo"]
 [ext_resource type="Texture2D" uid="uid://by70k8yujwdfi" path="res://资源/美术/角色/角色预设形象/素晴/头像/阿库娅_头像.png" id="1_e7ai2"]
-[ext_resource type="Texture2D" uid="uid://cwah5sa66v7yc" path="res://资源/美术/角色/角色预设形象/素晴/阿库娅.png" id="1_lmyjq"]
-[ext_resource type="Script" path="res://程序/角色/角色预设.gd" id="1_tavfw"]
+[ext_resource type="Texture2D" uid="uid://3msitfbvl22u" path="res://资源/美术/角色/角色预设形象/素晴/惠惠.png" id="2_uy2m2"]
 
 [resource]
-script = ExtResource("1_tavfw")
+script = ExtResource("1_7npeo")
 "char_名字" = "阿库娅"
 "char_等级" = 1
-"char_形象" = ExtResource("1_lmyjq")
+"char_形象" = ExtResource("2_uy2m2")
 "char_头像" = ExtResource("1_e7ai2")
 "血量" = 5
 "血量_max" = 5
@@ -17,4 +17,4 @@ script = ExtResource("1_tavfw")
 "护甲" = 5
 "护甲_max" = 5
 "char_职业集" = Array[Resource("res://程序/职业/职业数据和等级.gd")]([])
-"char_行为集" = Array[Resource("res://程序/行为/行为数据.gd")]([])
+"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([])

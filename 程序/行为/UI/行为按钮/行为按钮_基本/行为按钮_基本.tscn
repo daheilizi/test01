@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cswyv233qcljt"]
+
+[ext_resource type="Script" path="res://程序/行为/UI/行为按钮/行为按钮_基本/行为按钮_基本.gd" id="1_yvse7"]
+
+[node name="行为按钮_基本" type="TextureButton"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_yvse7")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="行为数据" load_steps=2 format=3 uid="uid://ckeyevof0k8t3"]
 
-[ext_resource type="Script" path="res://程序/行为/行为数据.gd" id="1_0q2wq"]
+[ext_resource type="Script" path="res://程序/行为/行为数据/行为数据.gd" id="1_0q2wq"]
 
 [resource]
 script = ExtResource("1_0q2wq")

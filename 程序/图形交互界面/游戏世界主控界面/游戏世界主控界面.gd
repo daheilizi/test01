@@ -8,6 +8,7 @@ const 角色头像显示单元_SCENE = preload("res://程序/图形交互界面/
 @onready var ui_全部: RichTextLabel = %"全部"
 @onready var ui_系统: RichTextLabel = %"系统"
 @onready var ui_战斗: RichTextLabel = %"战斗"
+@onready var _游戏世界: 游戏世界 = $"背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器/游戏世界子窗口/游戏世界"
 
 var _角色_dict: Dictionary
 var _角色_arr: Array[角色]
