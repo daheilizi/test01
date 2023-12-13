@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd7i5dec0ei3q"]
+
+[ext_resource type="Script" path="res://程序/行为/行为数据管理/行为数据管理.gd" id="1_pft04"]
+
+[node name="行为数据管理" type="Node"]
+script = ExtResource("1_pft04")

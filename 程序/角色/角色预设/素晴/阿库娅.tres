@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="角色预设" load_steps=4 format=3 uid="uid://bd5y5wu0x188q"]
+[gd_resource type="Resource" script_class="角色预设" load_steps=9 format=3 uid="uid://bd5y5wu0x188q"]
 
 [ext_resource type="Script" path="res://程序/角色/角色预设/角色预设.gd" id="1_7npeo"]
 [ext_resource type="Texture2D" uid="uid://by70k8yujwdfi" path="res://资源/美术/角色/角色预设形象/素晴/头像/阿库娅_头像.png" id="1_e7ai2"]
-[ext_resource type="Texture2D" uid="uid://3msitfbvl22u" path="res://资源/美术/角色/角色预设形象/素晴/惠惠.png" id="2_uy2m2"]
+[ext_resource type="Texture2D" uid="uid://cwah5sa66v7yc" path="res://资源/美术/角色/角色预设形象/素晴/阿库娅.png" id="2_ewymh"]
+[ext_resource type="Resource" uid="uid://ckeyevof0k8t3" path="res://程序/行为/行为数据/基本行为/普攻.tres" id="3_bx1pr"]
+[ext_resource type="Resource" uid="uid://bp5ba5uklpa4d" path="res://程序/行为/行为数据/基本行为/上.tres" id="4_f7c8n"]
+[ext_resource type="Resource" uid="uid://cnup8ajiomcxs" path="res://程序/行为/行为数据/基本行为/下.tres" id="5_8ukkd"]
+[ext_resource type="Resource" uid="uid://owswgjhpbvj7" path="res://程序/行为/行为数据/基本行为/左.tres" id="6_yfvak"]
+[ext_resource type="Resource" uid="uid://caxdhv8s28q84" path="res://程序/行为/行为数据/基本行为/右.tres" id="7_ama6u"]
 
 [resource]
 script = ExtResource("1_7npeo")
 "char_名字" = "阿库娅"
 "char_等级" = 1
-"char_形象" = ExtResource("2_uy2m2")
+"char_形象" = ExtResource("2_ewymh")
 "char_头像" = ExtResource("1_e7ai2")
 "血量" = 5
 "血量_max" = 5
@@ -17,4 +22,4 @@ script = ExtResource("1_7npeo")
 "护甲" = 5
 "护甲_max" = 5
 "char_职业集" = Array[Resource("res://程序/职业/职业数据和等级.gd")]([])
-"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([])
+"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([ExtResource("3_bx1pr"), ExtResource("4_f7c8n"), ExtResource("5_8ukkd"), ExtResource("6_yfvak"), ExtResource("7_ama6u")])

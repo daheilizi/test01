@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://83lddt0myvps"]
+
+[ext_resource type="Script" path="res://程序/行为/UI/行为按钮/行为按钮_基本/行为按钮_攻击_普攻/行为按钮_攻击_普攻.gd" id="1_bugm8"]
+
+[node name="行为按钮_攻击_普攻" type="TextureButton"]
+custom_minimum_size = Vector2(32, 32)
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_bugm8")

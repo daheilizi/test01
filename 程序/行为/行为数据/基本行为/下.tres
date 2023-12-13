@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="行为数据" load_steps=2 format=3 uid="uid://cnup8ajiomcxs"]
+[gd_resource type="Resource" script_class="行为数据" load_steps=3 format=3 uid="uid://cnup8ajiomcxs"]
 
+[ext_resource type="Texture2D" uid="uid://bdcgqgkjju6ua" path="res://资源/美术/行为/基本行为/icon_behaviour_move_down.png" id="1_1or6t"]
 [ext_resource type="Script" path="res://程序/行为/行为数据/行为数据.gd" id="1_4xxi7"]
 
 [resource]
 script = ExtResource("1_4xxi7")
 "_行为名称" = 1
 "_行为类型" = 0
+"_行为_texture" = ExtResource("1_1or6t")
 "_耐力消耗" = 0
 "_冷却时间" = 0
 "_是否_禁用" = false

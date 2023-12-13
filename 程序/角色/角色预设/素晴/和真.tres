@@ -22,4 +22,4 @@ script = ExtResource("1_bnyvf")
 "护甲" = 5
 "护甲_max" = 5
 "char_职业集" = Array[Resource("res://程序/职业/职业数据和等级.gd")]([])
-"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([ExtResource("3_dqe2h"), ExtResource("4_oxa5p"), ExtResource("5_ulh6v"), ExtResource("6_1fpy4"), ExtResource("7_bxaf8")])
+"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([ExtResource("7_bxaf8"), ExtResource("3_dqe2h"), ExtResource("4_oxa5p"), ExtResource("5_ulh6v"), ExtResource("6_1fpy4")])

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://utjwso5hyk7j"]
+
+[ext_resource type="Script" path="res://程序/行为/UI/行为按钮/行为按钮_基本/行为按钮_位移_右/行为按钮_位移_右.gd" id="1_u7k6o"]
+
+[node name="行为按钮_位移_右" type="TextureButton"]
+custom_minimum_size = Vector2(32, 32)
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_u7k6o")
