@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="职业数据" load_steps=2 format=3 uid="uid://bmarfv2d8eovv"]
+
+[ext_resource type="Script" path="res://程序/职业/职业数据/职业数据.gd" id="1_f5f0l"]
+
+[resource]
+script = ExtResource("1_f5f0l")
+"_职业名称" = 3
+"_职业名称_str" = "牧师"
+"_职业等级" = 0
+"_Ⅰ级技能" = Array[int]([])
+"_Ⅱ级技能" = Array[int]([])
+"_Ⅲ级技能" = Array[int]([])
+"_Ⅳ级技能" = Array[int]([])

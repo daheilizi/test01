@@ -39,10 +39,6 @@ func 触发_添加测试角色() -> void:
 	初始化_先攻顺序()
 	pass
 
-func 触发_更新先攻顺序() -> void:
-	更新先攻顺序()
-	pass
-
 func 初始化_先攻顺序() -> void:
 	for i in _角色_arr:
 		var new_角色头像显示单元 = 角色头像显示单元_SCENE.instantiate()
@@ -50,6 +46,6 @@ func 初始化_先攻顺序() -> void:
 		new_角色头像显示单元.加载角色数据(i)
 	pass
 
-func 更新先攻顺序() -> void:
+func 触发_战斗测试() -> void:
 	
 	pass

@@ -13,9 +13,8 @@ offset_bottom = -1048.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oqxjy")
-"_栏位类型" = 2
 
-[node name="物品纹理" type="TextureRect" parent="."]
+[node name="纹理按钮" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

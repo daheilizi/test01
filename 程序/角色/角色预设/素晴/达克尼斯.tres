@@ -1,18 +1,33 @@
-[gd_resource type="Resource" script_class="角色预设" load_steps=9 format=3 uid="uid://lgfkwg6i7okx"]
+[gd_resource type="Resource" script_class="角色预设" load_steps=15 format=3 uid="uid://lgfkwg6i7okx"]
 
 [ext_resource type="Texture2D" uid="uid://col5n4ldtc47k" path="res://资源/美术/角色/角色预设形象/素晴/头像/达克尼斯_头像.png" id="1_1eawa"]
 [ext_resource type="Texture2D" uid="uid://crrlny3ma4f04" path="res://资源/美术/角色/角色预设形象/素晴/达克尼斯.png" id="1_7bkwr"]
 [ext_resource type="Script" path="res://程序/角色/角色预设/角色预设.gd" id="1_abawq"]
-[ext_resource type="Resource" uid="uid://ckeyevof0k8t3" path="res://程序/行为/行为数据/基本行为/普攻.tres" id="3_o2yyf"]
-[ext_resource type="Resource" uid="uid://bp5ba5uklpa4d" path="res://程序/行为/行为数据/基本行为/上.tres" id="4_ry0ll"]
-[ext_resource type="Resource" uid="uid://cnup8ajiomcxs" path="res://程序/行为/行为数据/基本行为/下.tres" id="5_hsj0x"]
-[ext_resource type="Resource" uid="uid://owswgjhpbvj7" path="res://程序/行为/行为数据/基本行为/左.tres" id="6_ikxfg"]
-[ext_resource type="Resource" uid="uid://caxdhv8s28q84" path="res://程序/行为/行为数据/基本行为/右.tres" id="7_2dc07"]
+[ext_resource type="Resource" uid="uid://23f2kqm2xv6a" path="res://程序/库存/物品数据/武器/长剑.tres" id="1_rgo62"]
+[ext_resource type="Script" path="res://程序/库存/库存数据/库存数据.gd" id="1_ua0t0"]
+[ext_resource type="Script" path="res://程序/库存/UI/栏位框/栏位数据.gd" id="2_8k0ps"]
+[ext_resource type="Resource" uid="uid://dsxyrqwypm671" path="res://程序/职业/职业数据/战士.tres" id="3_5wjsn"]
+[ext_resource type="Resource" uid="uid://ckeyevof0k8t3" path="res://程序/行为/行为数据/基本行为/普攻.tres" id="3_v5ftx"]
+[ext_resource type="Resource" uid="uid://bp5ba5uklpa4d" path="res://程序/行为/行为数据/基本行为/上.tres" id="4_uex1w"]
+[ext_resource type="Resource" uid="uid://cnup8ajiomcxs" path="res://程序/行为/行为数据/基本行为/下.tres" id="5_44dap"]
+[ext_resource type="Resource" uid="uid://owswgjhpbvj7" path="res://程序/行为/行为数据/基本行为/左.tres" id="6_ljw3n"]
+[ext_resource type="Resource" uid="uid://caxdhv8s28q84" path="res://程序/行为/行为数据/基本行为/右.tres" id="7_usn6n"]
+
+[sub_resource type="Resource" id="Resource_pjsnv"]
+script = ExtResource("2_8k0ps")
+"_物品数据" = ExtResource("1_rgo62")
+"_物品数量" = 0
+"_栏位类型" = 1
+
+[sub_resource type="Resource" id="Resource_hbc86"]
+script = ExtResource("1_ua0t0")
+"_栏位数组" = Array[ExtResource("2_8k0ps")]([SubResource("Resource_pjsnv")])
+"_库存类型" = 0
 
 [resource]
 script = ExtResource("1_abawq")
 "char_名字" = "达克尼斯"
-"char_等级" = 1
+"char_职业" = ExtResource("3_5wjsn")
 "char_形象" = ExtResource("1_7bkwr")
 "char_头像" = ExtResource("1_1eawa")
 "血量" = 5
@@ -21,5 +36,5 @@ script = ExtResource("1_abawq")
 "能量_max" = 5
 "护甲" = 5
 "护甲_max" = 5
-"char_职业集" = Array[Resource("res://程序/职业/职业数据和等级.gd")]([])
-"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([ExtResource("3_o2yyf"), ExtResource("4_ry0ll"), ExtResource("5_hsj0x"), ExtResource("6_ikxfg"), ExtResource("7_2dc07")])
+"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([ExtResource("3_v5ftx"), ExtResource("4_uex1w"), ExtResource("5_44dap"), ExtResource("6_ljw3n"), ExtResource("7_usn6n")])
+"_库存数据" = SubResource("Resource_hbc86")

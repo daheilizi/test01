@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://brgpn8b7wkl76"]
+[gd_scene load_steps=9 format=3 uid="uid://brgpn8b7wkl76"]
 
 [ext_resource type="Script" path="res://程序/角色/角色.gd" id="1_uaxly"]
-[ext_resource type="PackedScene" uid="uid://bgif1tuxi6shc" path="res://程序/库存/UI/栏位框/栏位框.tscn" id="2_kqiuo"]
-[ext_resource type="PackedScene" uid="uid://dd7i5dec0ei3q" path="res://程序/行为/行为数据管理/行为数据管理.tscn" id="3_6lfkq"]
 [ext_resource type="Texture2D" uid="uid://ch16yixmil3wx" path="res://资源/美术/角色/角色卡片/ui_hp_color.png" id="3_6rq1b"]
 [ext_resource type="Texture2D" uid="uid://chh87g2lt4xns" path="res://资源/美术/角色/角色卡片/ui_ep_color.png" id="4_knlfk"]
 [ext_resource type="Texture2D" uid="uid://cggsj7v0xom34" path="res://资源/美术/角色/角色卡片/ui_ac_color.png" id="5_51hcv"]
 [ext_resource type="Texture2D" uid="uid://y6s6yuprtgfw" path="res://资源/美术/角色/角色卡片/角色卡牌边框.png" id="6_uidsx"]
+[ext_resource type="PackedScene" uid="uid://cash45gyu7hsq" path="res://程序/库存/UI/库存UI/角色背包/角色背包.tscn" id="6_w0hw7"]
 [ext_resource type="Texture2D" uid="uid://cprvxp28ckjny" path="res://资源/godot_icon.svg" id="7_sf05k"]
 [ext_resource type="PackedScene" uid="uid://bjuvsdg80e2cd" path="res://程序/行为/UI/行为列表/行为列表.tscn" id="10_4aiw6"]
 
@@ -14,8 +13,6 @@
 script = ExtResource("1_uaxly")
 "角色头像" = ExtResource("7_sf05k")
 metadata/_edit_group_ = true
-
-[node name="行为数据管理" parent="." instance=ExtResource("3_6lfkq")]
 
 [node name="卡片" type="Control" parent="."]
 layout_mode = 3
@@ -71,20 +68,20 @@ mouse_filter = 2
 [node name="编号" type="Label" parent="卡片/边框/布局/顶部面板"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_right = 40.0
+offset_right = 28.0
 offset_bottom = 26.0
 grow_horizontal = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "NUM"
+text = "00"
 horizontal_alignment = 1
 clip_text = true
 
 [node name="角色名" type="Label" parent="卡片/边框/布局/顶部面板"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 41.0
-offset_right = 142.0
+offset_left = 28.0
+offset_right = 119.0
 offset_bottom = 26.0
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
@@ -92,16 +89,16 @@ text = "CharName"
 horizontal_alignment = 1
 clip_text = true
 
-[node name="等级" type="Label" parent="卡片/边框/布局/顶部面板"]
+[node name="职业等级" type="Label" parent="卡片/边框/布局/顶部面板"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 142.0
+offset_left = 119.0
 offset_right = 182.0
 offset_bottom = 26.0
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "lv:0"
-horizontal_alignment = 1
+text = "职业名:0"
+horizontal_alignment = 2
 vertical_alignment = 1
 clip_text = true
 
@@ -112,17 +109,7 @@ offset_right = 36.0
 offset_bottom = 183.0
 mouse_filter = 1
 
-[node name="背包" type="Control" parent="卡片/边框/布局/左侧面板"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="布局" type="MarginContainer" parent="卡片/边框/布局/左侧面板/背包"]
+[node name="布局" type="MarginContainer" parent="卡片/边框/布局/左侧面板"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,27 +121,9 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="布局" type="VBoxContainer" parent="卡片/边框/布局/左侧面板/背包/布局"]
-custom_minimum_size = Vector2(32, 0)
+[node name="角色背包" parent="卡片/边框/布局/左侧面板/布局" instance=ExtResource("6_w0hw7")]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="栏位框" parent="卡片/边框/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
-layout_mode = 2
-mouse_filter = 1
-"_栏位类型" = 0
-
-[node name="栏位框2" parent="卡片/边框/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
-layout_mode = 2
-mouse_filter = 1
-
-[node name="栏位框3" parent="卡片/边框/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
-layout_mode = 2
-mouse_filter = 1
-
-[node name="栏位框4" parent="卡片/边框/布局/左侧面板/背包/布局/布局" instance=ExtResource("2_kqiuo")]
-layout_mode = 2
-mouse_filter = 1
 
 [node name="右侧面板" type="Panel" parent="卡片/边框/布局"]
 layout_mode = 0

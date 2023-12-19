@@ -9,23 +9,19 @@ const 角色卡片尺寸_const = Vector2(200,200)
 
 @onready var ui_编号: Label = %"编号"
 @onready var ui_角色名: Label = %"角色名"
-@onready var ui_等级: Label = %"等级"
+@onready var ui_职业等级: Label = %"职业等级"
 @onready var ui_血量: TextureProgressBar = %"血量"
 @onready var ui_血量_数值: Label = %血量数值
 @onready var ui_能量: TextureProgressBar = %能量
 @onready var ui_能量_数值: Label = %能量数值
 @onready var ui_护甲: TextureProgressBar = %护甲
 @onready var ui_护甲_数值: Label = %护甲数值
-@onready var ui_背包: Control = %背包
-@onready var ui_行为列表 = %"行为列表" as 行为列表
-@onready var 角色形象精灵: Sprite2D = %角色形象精灵
-@onready var mgr_行为数据管理 = $"行为数据管理" as 行为数据管理
+@onready var _角色背包 = %"角色背包" as 角色背包
+@onready var _行为列表 = %"行为列表" as 行为列表
+@onready var 角色形象精灵= %角色形象精灵 as Sprite2D 
 
 func _ready() -> void:
-	# 连接信号 行为数据操控
-	mgr_行为数据管理.信号_添加_行为数据.connect(ui_行为列表.触发_添加行为数据)
-	mgr_行为数据管理.信号_删除_行为数据.connect(ui_行为列表.触发_删除行为数据)
-	mgr_行为数据管理.信号_修改_行为数据.connect(ui_行为列表.触发_修改行为数据)
+
 	pass
 
 var char_编号: String: set = _set_char_编号
@@ -40,10 +36,11 @@ func  _set_char_名字(new_char_名字) -> void:
 	ui_角色名.text = char_名字
 	pass
 
-@export var char_等级: int: set = _set_char_等级
-func  _set_char_等级(new_char_等级) -> void:
-	char_等级 = new_char_等级
-	ui_等级.text = "lv:" + str(char_等级)
+# 职业
+var char_职业: 职业数据: set = _set_职业
+func _set_职业(new_职业: 职业数据) -> void:
+	char_职业 = new_职业
+	ui_职业等级.text = char_职业._职业名称_str + ":" + str(char_职业._职业等级)
 	pass
 
 var 血量: int: set = _set_血量
@@ -88,10 +85,6 @@ func _set_护甲_max(new_护甲_max: int) -> void:
 	ui_护甲_数值.text = str(护甲) + "/" + str(护甲_max)
 	pass
 
-var char_职业集: Array[职业数据和等级]
-
-var char_背包: 库存数据
-
 var 游戏世界位置: Vector2: set = _set_游戏世界位置
 func _set_游戏世界位置(new_游戏世界位置: Vector2i) -> void:
 	游戏世界位置 = new_游戏世界位置
@@ -101,15 +94,17 @@ func _set_游戏世界位置(new_游戏世界位置: Vector2i) -> void:
 
 var 先攻: int
 
-func _set_角色形象(new_char_形象: Texture2D) ->void:
-	角色形象精灵.texture = new_char_形象
-	pass
-	
 @export var 角色头像: Texture2D
+
+@export var 角色形象: Texture2D : set = _set_角色形象
+func _set_角色形象(new_char_形象: Texture2D) ->void:
+	角色形象 = new_char_形象
+	角色形象精灵.texture = 角色形象
+	pass
 
 func 加载角色预设(new_角色预设: 角色预设) -> void:
 	char_名字 = new_角色预设.char_名字
-	char_等级 = new_角色预设.char_等级
+	char_职业 = new_角色预设.char_职业
 	血量 = new_角色预设.血量
 	血量_max = new_角色预设.血量_max
 	能量 = new_角色预设.能量
@@ -117,9 +112,9 @@ func 加载角色预设(new_角色预设: 角色预设) -> void:
 	护甲 = new_角色预设.护甲
 	护甲_max = new_角色预设.护甲_max
 	角色头像 = new_角色预设.char_头像
-	_set_角色形象(new_角色预设.char_形象)
-	print(new_角色预设.char_行为集)
-	mgr_行为数据管理.加载_预设行为数据(new_角色预设.char_行为集)
+	角色形象 = new_角色预设.char_形象
+	_行为列表.加载_行为集数据(new_角色预设.char_行为集)
+	_角色背包.加载库存数据(new_角色预设._库存数据)
 	pass
 
 # 拖拽功能
@@ -163,7 +158,10 @@ func _放置角色() -> void:
 	new_游戏世界位置.y = int(new_游戏世界位置.y)
 	#print(new_游戏世界位置)
 	# 更新位置
-	游戏世界位置 = new_游戏世界位置
+	if new_游戏世界位置.x > 0 and new_游戏世界位置.y > 0: #边界限制
+		游戏世界位置 = new_游戏世界位置
+	else : #归位
+		游戏世界位置 = 游戏世界位置
 	pass
 
 func _触发_卡片_mouse_entered() -> void:
@@ -175,4 +173,3 @@ func _触发_卡片_mouse_exited() -> void:
 	是否_鼠标进入 = false
 	#print(是否_鼠标进入)
 	pass
-

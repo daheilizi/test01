@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="物品数据" load_steps=3 format=3 uid="uid://bqup3y5q8dopa"]
 
-[ext_resource type="Texture2D" uid="uid://bm7k38hy4qitt" path="res://资源/美术/物品/道具/红血瓶.png" id="1_hkwbb"]
-[ext_resource type="Script" path="res://资源/程序/库存/物品数据.gd" id="1_xa6r1"]
+[ext_resource type="Script" path="res://程序/库存/物品数据/物品数据.gd" id="1_7odtw"]
+[ext_resource type="Texture2D" uid="uid://bm7k38hy4qitt" path="res://资源/美术/物品/道具/红血瓶.png" id="1_yw6iv"]
 
 [resource]
-script = ExtResource("1_xa6r1")
+script = ExtResource("1_7odtw")
 "_物品名字" = 8
+"_物品名字_str" = "红血瓶"
 "_物品类型" = 1
-"_物品纹理" = ExtResource("1_hkwbb")
-"_是否_堆叠" = true
+"_物品纹理" = ExtResource("1_yw6iv")
+"_是否_堆叠" = false
+"_物品_描述" = ""

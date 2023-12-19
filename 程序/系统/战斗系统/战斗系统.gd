@@ -13,3 +13,4 @@ func _ready() -> void:
 	# 引用 _角色_arr 
 	_角色_arr = Global._角色_arr
 	pass
+

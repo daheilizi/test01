@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="职业数据" load_steps=3 format=3 uid="uid://nra8x5ekvw54"]
+[gd_resource type="Resource" script_class="职业数据" load_steps=2 format=3 uid="uid://c5qj6c3wvknle"]
 
-[ext_resource type="Script" path="res://程序/职业/职业数据.gd" id="1_fmnpm"]
-[ext_resource type="Resource" uid="uid://3u2m8mig587w" path="res://程序/行为/行为数据/职业特质/职业特质_冒险家_冒险家的准备.tres" id="1_jj5s5"]
+[ext_resource type="Script" path="res://程序/职业/职业数据/职业数据.gd" id="1_ih6rk"]
 
 [resource]
-script = ExtResource("1_fmnpm")
+script = ExtResource("1_ih6rk")
 "_职业名称" = 0
-"_职业特质" = Array[Resource("res://程序/行为/行为数据.gd")]([ExtResource("1_jj5s5")])
-"_Ⅰ级技能" = Array[Resource("res://程序/行为/行为数据.gd")]([])
-"_Ⅱ级技能" = Array[Resource("res://程序/行为/行为数据.gd")]([])
-"_Ⅲ级技能" = Array[Resource("res://程序/行为/行为数据.gd")]([])
-"_Ⅳ级技能" = Array[Resource("res://程序/行为/行为数据.gd")]([])
+"_职业名称_str" = "冒险家"
+"_职业等级" = 0
+"_Ⅰ级技能" = Array[int]([5])
+"_Ⅱ级技能" = Array[int]([])
+"_Ⅲ级技能" = Array[int]([])
+"_Ⅳ级技能" = Array[int]([])

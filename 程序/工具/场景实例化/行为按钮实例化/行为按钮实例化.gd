@@ -20,5 +20,3 @@ static func get_实例(行为名称: Global.行为名称):
 		Global.行为名称.攻击_普攻:
 			return 行为按钮_攻击_普攻_SCENE.instantiate()
 	pass
-	
-	

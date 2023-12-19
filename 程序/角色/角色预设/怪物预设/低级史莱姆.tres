@@ -5,12 +5,10 @@
 [resource]
 script = ExtResource("1_wlly5")
 "char_名字" = "低级史莱姆"
-"char_等级" = 1
-"血量" = 3
-"血量_max" = 3
-"能量" = 2
-"能量_max" = 2
+"血量" = 0
+"血量_max" = 0
+"能量" = 0
+"能量_max" = 0
 "护甲" = 0
 "护甲_max" = 0
-"char_职业集" = Array[Resource("res://程序/职业/职业数据和等级.gd")]([])
-"char_行为集" = Array[Resource("res://程序/行为/行为数据.gd")]([])
+"char_行为集" = Array[Resource("res://程序/行为/行为数据/行为数据.gd")]([])

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1q8f516cxw1r"]
+
+[ext_resource type="Script" path="res://程序/库存/库存管理/库存管理.gd" id="1_ymx77"]
+
+[node name="库存管理" type="Node"]
+script = ExtResource("1_ymx77")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="物品数据" load_steps=3 format=3 uid="uid://bxmn5k5qfb3wc"]
 
-[ext_resource type="Script" path="res://程序/库存/物品数据.gd" id="1_aae5y"]
+[ext_resource type="Script" path="res://程序/库存/物品数据/物品数据.gd" id="1_aae5y"]
 [ext_resource type="Texture2D" uid="uid://cpikd1b7l3a7a" path="res://资源/美术/物品/武器/战斧.png" id="1_jaahx"]
 
 [resource]
