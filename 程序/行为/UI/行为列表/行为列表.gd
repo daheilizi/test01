@@ -10,6 +10,7 @@ func _ready() -> void:
 	
 	pass
 
+# cudr
 func 添加_行为数据(new_行为数据: 行为数据):
 	# 数据添加
 	行为集.append(new_行为数据)

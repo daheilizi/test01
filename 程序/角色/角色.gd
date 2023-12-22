@@ -18,10 +18,13 @@ const 角色卡片尺寸_const = Vector2(200,200)
 @onready var ui_护甲_数值: Label = %护甲数值
 @onready var _角色背包 = %"角色背包" as 角色背包
 @onready var _行为列表 = %"行为列表" as 行为列表
-@onready var 角色形象精灵= %角色形象精灵 as Sprite2D 
+@onready var 角色形象精灵= %角色形象精灵 as Sprite2D
+
+var _战斗系统: 战斗系统
 
 func _ready() -> void:
-
+	Global._战斗系统.角色计算先攻.connect(触发_角色计算先攻)
+	_战斗系统 = Global._战斗系统 as 战斗系统
 	pass
 
 var char_编号: String: set = _set_char_编号
@@ -42,6 +45,14 @@ func _set_职业(new_职业: 职业数据) -> void:
 	char_职业 = new_职业
 	ui_职业等级.text = char_职业._职业名称_str + ":" + str(char_职业._职业等级)
 	pass
+
+var 先攻: int
+
+func 触发_角色计算先攻() -> void:
+	先攻 = 骰子.d20()
+	pass
+
+var 命令: String
 
 var 血量: int: set = _set_血量
 func _set_血量(new_血量: int) -> void:
@@ -92,8 +103,6 @@ func _set_游戏世界位置(new_游戏世界位置: Vector2i) -> void:
 			游戏世界网格边长_const * (游戏世界位置 - Vector2(1,1)))
 	pass
 
-var 先攻: int
-
 @export var 角色头像: Texture2D
 
 @export var 角色形象: Texture2D : set = _set_角色形象
@@ -113,8 +122,8 @@ func 加载角色预设(new_角色预设: 角色预设) -> void:
 	护甲_max = new_角色预设.护甲_max
 	角色头像 = new_角色预设.char_头像
 	角色形象 = new_角色预设.char_形象
-	_行为列表.加载_行为集数据(new_角色预设.char_行为集)
 	_角色背包.加载库存数据(new_角色预设._库存数据)
+	_行为列表.加载_行为集数据(new_角色预设.char_行为集)
 	pass
 
 # 拖拽功能

@@ -10,7 +10,7 @@ var _栏位数组: Array[栏位数据]
 var _库存类型: Global.库存类型 = Global.库存类型.角色背包
 
 func _ready() -> void:
-
+	
 	pass
 
 # cudr

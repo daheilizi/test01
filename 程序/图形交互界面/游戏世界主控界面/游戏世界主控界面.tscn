@@ -88,7 +88,7 @@ stretch = true
 
 [node name="游戏世界子窗口" type="SubViewport" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1442, 981)
 render_target_update_mode = 4
 
 [node name="游戏世界" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器/游戏世界子窗口" instance=ExtResource("2_qvdju")]
@@ -156,5 +156,10 @@ text = "添加测试角色"
 layout_mode = 2
 text = "战斗测试"
 
+[node name="进行一轮次" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
+layout_mode = 2
+text = "进行一轮次"
+
 [connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/添加测试角色" to="." method="触发_添加测试角色"]
 [connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/战斗测试" to="." method="触发_战斗测试"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/进行一轮次" to="." method="触发_进行一轮次"]

@@ -16,4 +16,3 @@ class_name 角色预设
 @export var char_行为集: Array[行为数据]
 @export_group("库存数据")
 @export var _库存数据: 库存数据
-
