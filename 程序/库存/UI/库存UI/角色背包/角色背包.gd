@@ -5,12 +5,13 @@ class_name 角色背包
 const 栏位框_SCENE = preload("res://程序/库存/UI/栏位框/栏位框.tscn")
 
 @onready var 列表= $"布局/列表" as VBoxContainer 
+@onready var _角色 = $"../../../../../.." as 角色
+
 
 var _栏位数组: Array[栏位数据]
 var _库存类型: Global.库存类型 = Global.库存类型.角色背包
 
 func _ready() -> void:
-	
 	pass
 
 # cudr

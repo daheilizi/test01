@@ -8,3 +8,5 @@ mouse_filter = 1
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("1_05k2c")
+
+[connection signal="pressed" from="." to="." method="_触发_行为"]

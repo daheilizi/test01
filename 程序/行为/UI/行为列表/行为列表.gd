@@ -3,6 +3,7 @@ class_name 行为列表
 
 
 @onready var 列表: VBoxContainer = $"布局/列表"
+@onready var _角色 = $"../../../../../.." as 角色 
 
 var 行为集: Array[行为数据]
 

@@ -2,11 +2,9 @@ extends Node
 class_name 战斗系统
 
 
+@onready var _消息系统 = Global._消息系统 as 消息系统
 var _角色_dict: Dictionary
 var _角色_arr: Array[角色]
-
-signal 角色计算先攻
-signal 角色排序改变
 
 func _ready() -> void:
 	# 节点准备好后在全局登记
@@ -17,42 +15,76 @@ func _ready() -> void:
 	_角色_arr = Global._角色_arr
 	pass
 
-func 进行一轮次() -> void:
-	emit_signal("角色计算先攻")
-	_角色排序_先攻()
-	emit_signal("角色排序改变")
+signal 角色计算先攻
+signal 角色排序改变
+signal 角色解析命令
+
+var _战斗结束: bool = false
+
+var _轮次阶段: Global.轮次阶段: set = _set_轮次阶段
+func _set_轮次阶段(new_轮次阶段) -> void:
+	_轮次阶段 = new_轮次阶段
+	match _轮次阶段:
+		Global.轮次阶段.先攻排序:
+			_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, "轮次阶段:先攻排序")
+			emit_signal("角色计算先攻")# 发给角色
+			# 排序
+			_角色排序_先攻()
+			emit_signal("角色排序改变")# 发给ui
+		Global.轮次阶段.先攻排序_结束:
+			_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, "轮次阶段:先攻排序_结束")
+			pass
+		Global.轮次阶段.角色决策:
+			_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, "轮次阶段:角色决策")
+			pass
+		Global.轮次阶段.角色决策_结束:
+			_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, "轮次阶段:角色决策_结束")
+			emit_signal("角色解析命令")# 发给角色
+			pass
+		Global.轮次阶段.角色行动:
+			_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, "轮次阶段:角色行动")
+			for i in _角色_arr:
+				#_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, i.命令)
+				角色行动结算(i)
+			pass
+		Global.轮次阶段.角色行动_结束:
+			_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, "轮次阶段:角色行动_结束")
+			pass
+	pass
+
+func 先攻排序() -> void:
+	_轮次阶段 = Global.轮次阶段.先攻排序
+	_轮次阶段 = Global.轮次阶段.先攻排序_结束
+	pass
+	
+func 角色决策() -> void:
+	_轮次阶段 = Global.轮次阶段.角色决策
+	pass
+
+func 角色决策结束() -> void:
+	_轮次阶段 = Global.轮次阶段.角色决策_结束
+	pass
+	
+func 角色行动() -> void:
+	_轮次阶段 = Global.轮次阶段.角色行动
+	_轮次阶段 = Global.轮次阶段.角色行动_结束
+	pass
+
+func 角色行动结算(当前角色: 角色) -> void:
+	print(当前角色.命令_dict)
 	pass
 
 func _角色排序_先攻() -> void:
-	_角色_arr.sort_custom(sort_custom_先攻)
-	# 插入排序
-	#for i in _角色_arr.size() - 1:
-		##print(i)
-		## 当前角色
-		#var 当前角色: 角色 = _角色_arr[i + 1]
-			## 上一个数的指针
-		#var 上一个数的指针: int = i
-		## 在数组中找到一个比当前遍历的数小的第一个数
-		#while 上一个数的指针 >= 0:
-			#if 当前角色.先攻 > _角色_arr[上一个数的指针].先攻:
-				## 把比当前遍历的数大的数字往后移动
-				#_角色_arr[上一个数的指针 + 1] = _角色_arr[上一个数的指针]
-			## 如果先攻值相同 重新d20
-			#elif 当前角色.先攻 == _角色_arr[上一个数的指针].先攻:
-				#if 骰子.d20_两者比较():
-					## 把比当前遍历的数大的数字往后移动
-					#_角色_arr[上一个数的指针 + 1] = _角色_arr[上一个数的指针]
-			## 需要插入的数的下标往前移动
-			#上一个数的指针 = 上一个数的指针 - 1
-		## 插入当前角色
-		#_角色_arr[上一个数的指针 + 1] = 当前角色
-	pass
-
-func sort_custom_先攻(角色a: 角色, 角色b: 角色) -> bool:
-	if 角色a.先攻 > 角色b.先攻:
-		return true
-	elif 角色a.先攻 == 角色b.先攻:
-		return 骰子.d20_两者比较()
-	else :
-		return false
+	# 冒泡 简单粗暴
+	for i in _角色_arr.size() - 1:
+		for j in  _角色_arr.size() - 1:
+			if _角色_arr[j].先攻 < _角色_arr[j + 1].先攻:
+				var temp = _角色_arr[j + 1]
+				_角色_arr[j + 1] = _角色_arr[j]
+				_角色_arr[j] = temp
+			elif _角色_arr[j].先攻 == _角色_arr[j + 1].先攻:
+				if 骰子.d20_两者比较():
+					var temp = _角色_arr[j + 1]
+					_角色_arr[j + 1] = _角色_arr[j]
+					_角色_arr[j] = temp
 	pass

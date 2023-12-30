@@ -5,9 +5,9 @@ class_name 游戏世界主控界面
 const 角色头像显示单元_SCENE = preload("res://程序/图形交互界面/先攻顺序表/角色头像显示单元/角色头像显示单元.tscn")
 
 @onready var 角色头像显示框: HBoxContainer = $"背景面板/布局水平分割/布局左侧竖直分割/左上/先攻顺序面板/布局/角色头像显示框"
-@onready var ui_全部: RichTextLabel = %"全部"
-@onready var ui_系统: RichTextLabel = %"系统"
-@onready var ui_战斗: RichTextLabel = %"战斗"
+@onready var ui_消息_全部: RichTextLabel = %"全部"
+@onready var ui_消息_系统: RichTextLabel = %"系统"
+@onready var ui_消息_战斗: RichTextLabel = %"战斗"
 @onready var _游戏世界: 游戏世界 = $"背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器/游戏世界子窗口/游戏世界"
 
 var _角色_dict: Dictionary
@@ -30,12 +30,15 @@ func _ready() -> void:
 
 func 触发_发送消息(para_消息类型: Global.消息类型, para_消息内容: String) -> void:
 	# 为’全部‘添加消息内容
-	ui_全部.add_text(para_消息内容)
+	ui_消息_全部.append_text(para_消息内容)
+	ui_消息_全部.newline()
 	match para_消息类型:
 		Global.消息类型.系统提示:
-			ui_系统.add_text(para_消息内容)
+			ui_消息_系统.append_text(para_消息内容)
+			ui_消息_系统.newline()
 		Global.消息类型.战斗:
-			ui_战斗.add_text(para_消息内容)
+			ui_消息_战斗.append_text(para_消息内容)
+			ui_消息_战斗.newline()
 	pass
 
 func 触发_添加测试角色() -> void:
@@ -44,27 +47,36 @@ func 触发_添加测试角色() -> void:
 	Global._游戏世界.add_角色(load("res://程序/角色/角色预设/素晴/达克尼斯.tres"))
 	Global._游戏世界.add_角色(load("res://程序/角色/角色预设/素晴/阿库娅.tres"))
 	#更新_先攻顺序面板()
+	var 添加测试角色 = $"背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/添加测试角色" as Button
+	添加测试角色.disabled = true
 	pass
 
 func 触发_角色排序改变() -> void:
 	更新_先攻顺序面板()
 	pass
-
 func 更新_先攻顺序面板() -> void:
 	for i in 角色头像显示框.get_children():
 		i.queue_free()
 	for i in _角色_arr:
 		#print(i.char_名字 + "先攻" +str(i.先攻))
-		_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, i.char_名字 + "先攻" +str(i.先攻))
+		#_消息系统.emit_signal("信号_发送消息", Global.消息类型.战斗, i.char_名字 + "先攻" +str(i.先攻))
 		var new_角色头像显示单元 = 角色头像显示单元_SCENE.instantiate()
 		角色头像显示框.add_child(new_角色头像显示单元)
 		new_角色头像显示单元.加载角色数据(i)
 	pass
 
-func 触发_战斗测试() -> void:
-	
+func 触发_先攻排序() -> void:
+	_战斗系统.先攻排序()
+	pass
+
+func 触发_角色决策() -> void:
+	_战斗系统.角色决策()
+	pass
+
+func 触发_角色决策结束() -> void:
+	_战斗系统.角色决策结束()
 	pass
 	
-func 触发_进行一轮次() -> void:
-	_战斗系统.进行一轮次()
+func 触发_角色行动() -> void:
+	_战斗系统.角色行动()
 	pass

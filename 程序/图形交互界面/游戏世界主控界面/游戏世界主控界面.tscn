@@ -88,7 +88,7 @@ stretch = true
 
 [node name="游戏世界子窗口" type="SubViewport" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器"]
 handle_input_locally = false
-size = Vector2i(1442, 981)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="游戏世界" parent="背景面板/布局水平分割/布局左侧竖直分割/左下/子窗口容器/游戏世界子窗口" instance=ExtResource("2_qvdju")]
@@ -152,14 +152,24 @@ layout_mode = 2
 layout_mode = 2
 text = "添加测试角色"
 
-[node name="战斗测试" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
+[node name="先攻排序" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
 layout_mode = 2
-text = "战斗测试"
+text = "先攻排序"
 
-[node name="进行一轮次" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
+[node name="角色决策" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
 layout_mode = 2
-text = "进行一轮次"
+text = "角色决策"
+
+[node name="角色决策结束" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
+layout_mode = 2
+text = "角色决策结束"
+
+[node name="角色行动" type="Button" parent="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局"]
+layout_mode = 2
+text = "角色行动"
 
 [connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/添加测试角色" to="." method="触发_添加测试角色"]
-[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/战斗测试" to="." method="触发_战斗测试"]
-[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/进行一轮次" to="." method="触发_进行一轮次"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/先攻排序" to="." method="触发_先攻排序"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/角色决策" to="." method="触发_角色决策"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/角色决策结束" to="." method="触发_角色决策结束"]
+[connection signal="pressed" from="背景面板/布局水平分割/布局右侧竖直分割/右下/布局/测试面板/布局/角色行动" to="." method="触发_角色行动"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="角色预设" load_steps=19 format=3 uid="uid://cawfk8yqxbr8s"]
+[gd_resource type="Resource" script_class="角色预设" load_steps=20 format=3 uid="uid://cawfk8yqxbr8s"]
 
 [ext_resource type="Script" path="res://程序/角色/角色预设/角色预设.gd" id="1_bnyvf"]
 [ext_resource type="Texture2D" uid="uid://f3ssqd307uf3" path="res://资源/美术/角色/角色预设形象/素晴/头像/和真_头像.png" id="1_iyhf6"]
@@ -7,13 +7,13 @@
 [ext_resource type="Script" path="res://程序/库存/UI/栏位框/栏位数据.gd" id="2_cu3me"]
 [ext_resource type="Resource" uid="uid://bqup3y5q8dopa" path="res://程序/库存/物品数据/道具/红血瓶.tres" id="3_2o4tc"]
 [ext_resource type="Resource" uid="uid://bp5ba5uklpa4d" path="res://程序/行为/行为数据/基本行为/上.tres" id="3_dqe2h"]
-[ext_resource type="Resource" uid="uid://c5qj6c3wvknle" path="res://程序/职业/职业数据/冒险家.tres" id="3_vmuhc"]
 [ext_resource type="Script" path="res://程序/库存/库存数据/库存数据.gd" id="4_bvh5d"]
 [ext_resource type="Resource" uid="uid://l0rmwt7j1620" path="res://程序/库存/物品数据/道具/烤肉.tres" id="4_c7ntj"]
 [ext_resource type="Resource" uid="uid://cnup8ajiomcxs" path="res://程序/行为/行为数据/基本行为/下.tres" id="4_oxa5p"]
 [ext_resource type="Resource" uid="uid://owswgjhpbvj7" path="res://程序/行为/行为数据/基本行为/左.tres" id="5_ulh6v"]
 [ext_resource type="Resource" uid="uid://caxdhv8s28q84" path="res://程序/行为/行为数据/基本行为/右.tres" id="6_1fpy4"]
 [ext_resource type="Resource" uid="uid://ckeyevof0k8t3" path="res://程序/行为/行为数据/基本行为/普攻.tres" id="7_bxaf8"]
+[ext_resource type="Script" path="res://程序/职业/职业数据/职业数据.gd" id="8_iefnt"]
 
 [sub_resource type="Resource" id="Resource_4ibh8"]
 script = ExtResource("2_cu3me")
@@ -38,10 +38,20 @@ script = ExtResource("4_bvh5d")
 "_栏位数组" = Array[ExtResource("2_cu3me")]([SubResource("Resource_4ibh8"), SubResource("Resource_cauwt"), SubResource("Resource_q2gin")])
 "_库存类型" = 0
 
+[sub_resource type="Resource" id="Resource_nnas2"]
+script = ExtResource("8_iefnt")
+"_职业名称" = 0
+"_职业名称_str" = "冒险家"
+"_职业等级" = 1
+"_Ⅰ级技能" = Array[int]([5])
+"_Ⅱ级技能" = Array[int]([])
+"_Ⅲ级技能" = Array[int]([])
+"_Ⅳ级技能" = Array[int]([])
+
 [resource]
 script = ExtResource("1_bnyvf")
 "char_名字" = "和真"
-"char_职业" = ExtResource("3_vmuhc")
+"char_职业" = SubResource("Resource_nnas2")
 "char_形象" = ExtResource("2_28meu")
 "char_头像" = ExtResource("1_iyhf6")
 "血量" = 5

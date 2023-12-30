@@ -19,12 +19,14 @@ const 角色卡片尺寸_const = Vector2(200,200)
 @onready var _角色背包 = %"角色背包" as 角色背包
 @onready var _行为列表 = %"行为列表" as 行为列表
 @onready var 角色形象精灵= %角色形象精灵 as Sprite2D
+@onready var ui_决策 = $"卡片/决策" as LineEdit
 
 var _战斗系统: 战斗系统
 
 func _ready() -> void:
-	Global._战斗系统.角色计算先攻.connect(触发_角色计算先攻)
 	_战斗系统 = Global._战斗系统 as 战斗系统
+	_战斗系统.角色计算先攻.connect(触发_角色计算先攻)
+	_战斗系统.角色解析命令.connect(触发_角色解析命令)
 	pass
 
 var char_编号: String: set = _set_char_编号
@@ -52,7 +54,43 @@ func 触发_角色计算先攻() -> void:
 	先攻 = 骰子.d20()
 	pass
 
-var 命令: String
+var 命令_dict = {}
+func 解析_ui_决策_文本() -> void:
+	var 文本: String = ui_决策.text
+	var 单元命令: String
+	var 分号位置: int
+	if 文本.find(";") == -1: # 视作空
+		print("无指令")
+	else :
+		while !文本.is_empty():
+			分号位置 = 文本.find(";")
+			单元命令 = 文本.left(分号位置)
+			解析子命令(单元命令)
+			文本 = 文本.erase(0, 分号位置 + 1) # 剪切
+	pass
+func 解析子命令(单元命令: String) -> void:
+	var 行为名称_str: String
+	var 行为参数_arr: Array
+	if 单元命令.find(":") == -1:
+		print("命令错误")
+	else :
+		var 冒号位置: int = 单元命令.find(":")
+		行为名称_str = 单元命令.left(冒号位置)
+		var 参数部分: String = 单元命令.erase(0, 冒号位置 + 1)
+		var 逗号位置: int
+		while !参数部分.is_empty():
+			逗号位置 = 参数部分.find(",")
+			行为参数_arr.append(参数部分.left(逗号位置))
+			参数部分 = 参数部分.erase(0, 逗号位置 + 1)
+	命令_dict[行为名称_str] = 行为参数_arr
+	pass
+# 交互产生命令
+func 触发_生成命令(new_命令: String) -> void:
+	ui_决策.text += new_命令 # 末尾追加
+	pass
+func 触发_角色解析命令() -> void:
+	解析_ui_决策_文本()
+	pass
 
 var 血量: int: set = _set_血量
 func _set_血量(new_血量: int) -> void:
